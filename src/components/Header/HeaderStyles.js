@@ -40,6 +40,8 @@ export const Div2 = styled.div`
   }
 `;
 export const Div3 = styled.div`
+  position: relative;
+  bottom: 10px;
   grid-area: 1 / 5 / 2 / 6;
   display: flex;
   justify-content: space-around;
@@ -114,7 +116,6 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 
 
 // Social Icons 
-
 export const SocialIcons = styled.a`
 transition: 0.3s ease;
 color: white;

@@ -8,9 +8,11 @@ import { Container, Div1, Div2, Div3, NavLink, SocialIcons,  Span } from './Head
 const Header = () =>  (
   <Container>
     <Div1>
+      <Link href="/">
       <a style={{ display: "flex", alignItems: "center", color:'white', marginBottom:"20px"}}>
         <DiCssdeck size="3rem"/> <Span>Portfolio</Span>
       </a>
+      </Link>
     </Div1>
     <Div2>
       <li>
@@ -22,7 +24,7 @@ const Header = () =>  (
         <Link href="#tech">
           <NavLink>Technologies</NavLink>
         </Link>
-      </li>
+      </li> 
       <li>
         <Link href="#about">
           <NavLink>About</NavLink>
