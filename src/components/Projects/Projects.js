@@ -7,30 +7,30 @@ import { arrayOfProject } from '../../constants/constants';
 
 const Projects = () => (
   <Section nopadding id="projects">
-    <SectionDivider/>
+    <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
-      {arrayOfProject.map( ({id, title, description, image, tags, source, visit}) => (
-      <BlogCard key={id}>
-        <Img src={image}/>
-        <TitleContent>
-          <HeaderThree title>{title}</HeaderThree>
-          <Hr/>
-          <CardInfo>{description}</CardInfo>
-        </TitleContent>
-        <div>
-          <TitleContent>Stack</TitleContent>
-          <TagList>
-            {tags.map( (tag, index) => (
-              <Tag key={index}>{tag}</Tag>
-            ))}
-          </TagList>
-        </div>
-        <UtilityList>
-          <ExternalLinks href={visit}>Code</ExternalLinks>
-          <ExternalLinks href={source}>Source</ExternalLinks>
-        </UtilityList>
-      </BlogCard>
+      {arrayOfProject.map(({ id, title, description, image, tags, source, visit }) => (
+        <BlogCard key={id}>
+          <Img src={image} />
+          <TitleContent>
+            <HeaderThree title>{title}</HeaderThree>
+            <Hr />
+            <CardInfo>{description}</CardInfo>
+          </TitleContent>
+          <div>
+            <TitleContent>Stack</TitleContent>
+            <TagList>
+              {tags.map((tag, index) => (
+                <Tag key={index}>{tag}</Tag>
+              ))}
+            </TagList>
+          </div>
+          <UtilityList>
+            <ExternalLinks href={visit}>Code</ExternalLinks>
+            <ExternalLinks href={source}>Source</ExternalLinks>
+          </UtilityList>
+        </BlogCard>
       ))}
     </GridContainer>
   </Section>
