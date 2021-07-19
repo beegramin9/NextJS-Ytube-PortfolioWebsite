@@ -4,13 +4,12 @@ import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag,
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { arrayOfProject } from '../../constants/constants';
 
-
 const Projects = () => (
   <Section nopadding id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <GridContainer>
-      {arrayOfProject.map(({ id, title, description, image, tags, source, visit }) => (
+      {arrayOfProject.map(({ id, title, description, image, tags, link, github }) => (
         <BlogCard key={id}>
           <Img src={image} />
           <TitleContent>
@@ -27,8 +26,8 @@ const Projects = () => (
             </TagList>
           </div>
           <UtilityList>
-            <ExternalLinks href={visit}>Code</ExternalLinks>
-            <ExternalLinks href={source}>Source</ExternalLinks>
+            <ExternalLinks href={link}>Link</ExternalLinks>
+            <ExternalLinks href={github}>Github</ExternalLinks>
           </UtilityList>
         </BlogCard>
       ))}
