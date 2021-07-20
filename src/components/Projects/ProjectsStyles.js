@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const Img = styled.img`
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   width:100%;
   height:100%;
   object-fit: cover;
   &:hover {
-    transition: transform 1s ease-in-out;
-    transform: scale(1.25);
+    transition: transform 500ms ease-in-out;
+    transform: scale(1.1);
     opacity: 1.5;
   }
 `
@@ -112,7 +114,12 @@ export const TagList = styled.ul`
   margin: 1.5rem 0;
 `
 
-export const Tag = styled.li`
-  color: #d8bfbf;
-  font-size: 1.5rem;
+export const TagImg = styled.img`
+  font-size: 1rem;
+
+  &:hover {
+    transition: transform 100s ease-in-out;
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 `
