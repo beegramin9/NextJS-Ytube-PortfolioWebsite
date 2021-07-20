@@ -29,9 +29,9 @@ export const arrayOfProject = [
   },
   {
     title: 'Movie Archive Webapp',
-    description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
+    description: "This project works on a movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom FetchAPIandPagination Hook, styled components, routers and loading spinner. The social media icons at the header and footer lead to my social accounts, and About page contains a prologue of this project.",
     image: '/images/portfolio/React.gif',
-    tags: ['React', 'Styled-Component'],
+    tags: ['React', 'Custom Hooks', 'Styled-Component'],
     link: 'https://google.com',
     github: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
     id: 3,

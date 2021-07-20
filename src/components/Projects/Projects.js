@@ -8,12 +8,14 @@ const Projects = () => (
   <Section nopadding id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
-    <SectionText>Some of the projects started from a simple Youtube tutorials for me to learn new techs and concepts. <br></br>
+    <SectionText>Some of the projects started from a simple designless Youtube tutorials for me to learn new techs and concepts. <br></br>
     But along the development, I thought of a few new features that would show my perspective, preferences and ideas.</SectionText>
     <GridContainer>
       {arrayOfProject.map(({ id, title, description, image, tags, link, github }) => (
         <BlogCard key={id}>
-          <Img src={image} />
+          <div style={{overflow:'hidden'}}>
+            <Img src={image} />
+          </div>
           <TitleContent>
             <HeaderThree title>{title}</HeaderThree>
             <Hr />

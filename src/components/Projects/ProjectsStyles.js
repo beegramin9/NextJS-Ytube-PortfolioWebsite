@@ -4,7 +4,11 @@ export const Img = styled.img`
   width:100%;
   height:100%;
   object-fit: cover;
-  overflow: hidden;
+  &:hover {
+    transition: transform 1s ease-in-out;
+    transform: scale(1.25);
+    opacity: 1.5;
+  }
 `
 
 export const GridContainer = styled.section`

@@ -31,7 +31,7 @@ const Technologies = () =>  (
           </ListParagraph>
         </ListContainer>
       </ListItem>
-      <ListItem>
+      {/* <ListItem>
         <DiZend size="3em"/>
         <ListContainer>
           <ListTitle>Front-End</ListTitle>
@@ -39,7 +39,7 @@ const Technologies = () =>  (
                         tools like Figma
           </ListParagraph>
         </ListContainer>
-      </ListItem>
+      </ListItem> */}
     </List>
   </Section>
 );
