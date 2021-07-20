@@ -108,7 +108,7 @@ transition: 0.5s;
 }
 `;
 
-export const TagList = styled.ul`
+export const TagImgList = styled.ul`
   display: flex;
   justify-content: space-around;
   margin: 1.5rem 0;

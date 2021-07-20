@@ -4,6 +4,7 @@ import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponent
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
+console.log(process.env.PUBLIC_URL);
 const Hero = (props) => (
   <Section grid nopadding>
     <LeftSection>
@@ -16,9 +17,9 @@ const Hero = (props) => (
       technologies, also knowledgeable in software applications, algorithms,
       development techniques, and data structures.
       </SectionText>
-      <Button onClick={()=> window.location = 'https://mail.google.com'}>
-        Learn more
-      </Button>
+      <a href="/resume/Resume.pdf" download="resume-WontaeChoi.pdf">
+        <Button>Download Resume</Button>
+      </a>
     </LeftSection>
   </Section>
 );

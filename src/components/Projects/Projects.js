@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, TagImg, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
+import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, TagImg, TagImgList, TitleContent, UtilityList, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles/GlobalComponents';
 import { arrayOfProject } from '../../constants/constants';
 
@@ -20,11 +20,11 @@ const Projects = () => (
             <HeaderThree title>{title}</HeaderThree>
             <Hr />
             <div>
-              <TagList>
+              <TagImgList>
                 {tags.map((tag, index) => (
                   <TagImg key={index} src={tag}></TagImg>
                 ))}
-              </TagList>
+              </TagImgList>
             </div>
             <CardInfo>{'\u00A0'}{description}</CardInfo>
           </TitleContent>
