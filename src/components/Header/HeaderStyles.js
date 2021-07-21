@@ -2,13 +2,23 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 7rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 4rem;
 
+  background: ${(props) => props.colorAlt ? 
+    'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
+    'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
+
+    margin: ${(props) => props.divider ? "4rem 0" : "" };
+
+  /* margin-bottom: 4rem; */
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -56,7 +66,7 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: ${props => props.theme.colors.orangeyellow};
+  color: ${props => props.theme.colors.pastelwhite};
   transition: 0.4s ease;
   &:hover {
     color: #fff;
@@ -71,12 +81,12 @@ export const NavLink = styled.a`
 // Social Icons 
 export const SocialIcons = styled.a`
   transition: 0.3s ease;
-  color: ${props => props.theme.colors.orangeyellow};
+  color: ${props => props.theme.colors.pastelwhite};
   border-radius: 50px;
   padding: 8px;
 &:hover {
     background-color: ${props => props.theme.colors.darkpurple};
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
   }
 `

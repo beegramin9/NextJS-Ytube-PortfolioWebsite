@@ -77,7 +77,7 @@ export const CardInfo = styled.p`
   width: 100%;
   height: 18em;
   padding: 0 50px;
-  color: #e4e6e7;
+  color: ${props => props.theme.colors.lightblack}; /* Dark mode: #e4e6e7  */
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;

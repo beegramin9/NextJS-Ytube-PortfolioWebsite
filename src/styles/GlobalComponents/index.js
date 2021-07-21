@@ -9,7 +9,7 @@ export const Section = styled.section`
   max-width: 1040px;
   box-sizing: content-box;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   grid-template-columns: 1fr 1fr;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -25,7 +25,6 @@ export const Section = styled.section`
   }
 `
 /* linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15% */
-/* ${props => props.theme.colors.lightblack} */
 export const SectionTitle = styled.h2`
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};

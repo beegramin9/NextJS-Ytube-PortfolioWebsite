@@ -1,8 +1,11 @@
 import styled from "styled-components"
 
 export const FooterWrapper = styled.section`
-	width: calc(100vw - 96px);
+  width: calc(100vw - 96px);
   max-width: 1040px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
   padding: 2rem 48px 40px;
   margin: 1rem auto;
   box-sizing: content-box;
@@ -17,14 +20,14 @@ export const FooterWrapper = styled.section`
 export const LinkItem = styled.a`
 	font-size: 18px;
 	line-height: 30px;
-	color: rgba(255, 255, 255, 0.75);
+	color: ${props => props.theme.colors.lightblack} /* rgba(255, 255, 255, 0.75) */;
 	margin-bottom: 16px;
 	transition: .3s ease;
 	position: relative;
 	left: 0;
 
 	&:hover {
-		color: #fff;
+		color: ${props => props.theme.colors.black}; /* #FFF */
 		left: 6px;
 	}
 
@@ -82,7 +85,7 @@ export const CompanyContainer = styled.div`
 
 
 export const Slogan = styled.p`
-	color: rgba(255, 255, 255, 0.5);
+	color: ${props => props.theme.colors.lightblack};
 	min-width: 280px;
 	letter-spacing: 0.02em;
 	font-size: 18px;
@@ -103,7 +106,7 @@ export const Slogan = styled.p`
 
 export const SocialContainer = styled.div`
 	display: flex;
-  align-items: center;
+	align-items: center;
 
 	@media ${props => props.theme.breakpoints.md}{
 		justify-content: center;
@@ -114,11 +117,11 @@ export const SocialContainer = styled.div`
 
 
 export const LinkList = styled.ul`
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: grid;
+	border-top:  1px solid rgb(70, 65, 61); /* darkmode rgba(255, 255, 255, 0.1) */
+	display: grid;
 	grid-template-columns: repeat(3, minmax(85px, 220px));
 	gap: 40px;
-  padding: 40px 0 28px;
+	padding: 40px 0 28px;
 
 	@media ${props => props.theme.breakpoints.lg} {
 		padding: 32px 0 16px;
@@ -148,7 +151,7 @@ export const LinkTitle = styled.h4`
 	font-size: 12px;
 	line-height: 24px;
 	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.4);
+	color: ${props => props.theme.colors.lightblack} /* Dark, rgba(255, 255, 255, 0.4) */;
 	margin-bottom: 16px;
 
 	@media ${props => props.theme.breakpoints.sm} {
