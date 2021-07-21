@@ -1,4 +1,5 @@
 /* logic의 content, 즉 변하지 않는 Constants */
+//! Projects Component
 export const arrayOfProject = [
   {
     title: 'Momentum Clone',

@@ -56,7 +56,7 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${props => props.theme.colors.orangeyellow};
   transition: 0.4s ease;
   &:hover {
     color: #fff;
@@ -68,7 +68,20 @@ export const NavLink = styled.a`
   }
 `;
 
-/// DropDown Contact
+// Social Icons 
+export const SocialIcons = styled.a`
+  transition: 0.3s ease;
+  color: ${props => props.theme.colors.orangeyellow};
+  border-radius: 50px;
+  padding: 8px;
+&:hover {
+    background-color: ${props => props.theme.colors.darkpurple};
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+`
+
+//! DropDown Contact, 아직 안쓰임
 export const ContactDropDown = styled.button`
   border: none;
   display: flex;
@@ -114,17 +127,3 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   }
 `;
 
-
-// Social Icons 
-export const SocialIcons = styled.a`
-transition: 0.3s ease;
-color: white;
-border-radius: 50px;
-  padding: 8px;
-&:hover {
-    background-color: #212d45;
-    transform: scale(1.2);
-    cursor: pointer;
-    
-  }
-`

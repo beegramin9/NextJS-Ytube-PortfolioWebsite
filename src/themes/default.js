@@ -12,16 +12,19 @@ const theme = {
   //! button: hsl(205.1,100%,36.1%)
   //! background2: hsl(232.7,27.3%,23.7%)
 
-  //todo background: rgb(242, 242, 242), skyblue: rgb(135, 209, 210)
-  //todo black: rgb(33, 28, 24), darkgreen: rgb(72, 98, 74), lightblack: rgb(70, 65, 61)
-  //todo red: rgb(252, 158, 148), yellow: rgb(243, 210, 179)
 
   colors: {
-    primary1: "rgb(242, 242, 242)",
-    background1: "rgb(242, 242, 242)", 
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
+    pastelwhite: "rgb(242, 242, 242)", 
+    gray: "hsl(204,23.8%,95.9%)",
+    red: "rgb(252, 158, 148)",
+    orangeyellow: "hsl(34.9,98.6%, 55%)",
+    yellow: "rgb(243, 210, 179)",
+    darkgreen: "rgb(72, 98, 74)",
+    skyblue: "rgb(135, 209, 210)",
+    blue: "hsl(205.1,100%,36.1%)",
+    darkpurple: "hsl(232.7,27.3%,23.7%)",
+    lightblack: "rgb(70, 65, 61)",
+    black: "rgb(33, 28, 24)",
   },
   // Breakpoints for responsive design
   breakpoints: {

@@ -1,3 +1,4 @@
+//! 파일이름 Section.js였으면 좋았을텐데
 import styled from 'styled-components'
 
 export const Section = styled.section`
@@ -23,14 +24,15 @@ export const Section = styled.section`
     flex-direction: column;
   }
 `
-
+/* linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15% */
+/* ${props => props.theme.colors.lightblack} */
 export const SectionTitle = styled.h2`
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '72px' : '56px'};
   width: max-content;
   max-width: 100%;
-  background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+  background: linear-gradient(121.57deg, rgb(33, 28, 24) 18.77%, rgba(70, 65, 61, 0.6) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
@@ -60,7 +62,7 @@ export const SectionText = styled.p`
   line-height: 40px;
   font-weight: 300;
   padding-bottom: 3.6rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${props => props.theme.colors.lightblack};
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
@@ -76,6 +78,7 @@ export const SectionText = styled.p`
   }
 `
 
+//! 가르는 선
 export const SectionDivider = styled.div`
 
   width: 64px;
@@ -103,7 +106,7 @@ export const SectionSubText = styled.p`
   font-weight: 300;
   font-size: 18px;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${props => props.theme.colors.lightblack};
 
 @media ${(props) => props.theme.breakpoints.md} {
     max-width: 672px;
@@ -116,6 +119,7 @@ export const SectionSubText = styled.p`
     line-height: 22px;
   }
 `
+//! Unused
 export const SecondaryBtn = styled.button`
   color: #FFF;
   background: none;
@@ -166,6 +170,7 @@ export const SecondaryBtn = styled.button`
   }
 `
 
+//! Unused
 export const ButtonBack = styled.div`
   width: ${({ alt }) => alt ? '150px' : '262px'};
   height: ${({ alt }) => alt ? '52px' : '64px'};
@@ -199,6 +204,7 @@ export const ButtonBack = styled.div`
   }
 `
 
+//! Unused
 export const ButtonFront = styled.button`
   border: none;
   border-radius: 50px;
@@ -245,6 +251,7 @@ export const ButtonFront = styled.button`
   }
 `
 
+//! Unused
 export const LinkContainer = styled.div`
   margin-left: ${({ large }) => large ? '24px' : '16px'};
   transition: 0.3s ease;
@@ -267,6 +274,7 @@ export const LinkContainer = styled.div`
   }
 `
 
+//! Unused
 export const LinkIconImg = styled.div`
   display: flex;  
   height: ${({ large }) => large ? '32px' : '24px'};
