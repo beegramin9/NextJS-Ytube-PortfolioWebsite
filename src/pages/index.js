@@ -14,17 +14,15 @@ const Home = () => {
   //todo Hero, BgAnimation 겹치게 해야 함
   return (
     <Layout>
-      <div style={{paddingTop: '5rem'}}>
         <Section /* grid */ flex row >
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
         </Section>
         <Projects />
-        <Technologies />
+        <Technologies/>
         <Timeline />
         <Acomplishments />
-      </div>
     </Layout>
   );
 };

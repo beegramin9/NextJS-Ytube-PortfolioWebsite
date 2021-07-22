@@ -17,6 +17,7 @@ const theme = {
     pastelwhite: "rgb(242, 242, 242)", 
     gray: "hsl(204,23.8%,95.9%)",
     red: "rgb(252, 158, 148)",
+    redbrown: "#d4c0c0",
     orangeyellow: "hsl(34.9,98.6%, 55%)",
     yellow: "rgb(243, 210, 179)",
     darkgreen: "rgb(72, 98, 74)",

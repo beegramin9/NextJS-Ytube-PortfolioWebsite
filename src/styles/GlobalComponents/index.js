@@ -4,12 +4,11 @@ import styled from 'styled-components'
 export const Section = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex" };
   flex-direction: ${(props) => props.row ? "row" : "column" };
-  padding: ${(props) => props.nopadding ? "0" : "32px 48px 0" } ;
+  padding: ${(props) => props.nopadding ? "0" : "100px 48px 0" } ;
   margin: 0 auto;
   max-width: 1040px;
   box-sizing: content-box;
   position: relative;
-  /* overflow: hidden; */
   grid-template-columns: 1fr 1fr;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -34,8 +33,8 @@ export const SectionTitle = styled.h2`
   background: linear-gradient(121.57deg, rgb(33, 28, 24) 18.77%, rgba(70, 65, 61, 0.6) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 16px;
-  padding: ${(props) => props.main ? '58px 0 16px' : '0'};
+  margin: 0 0 16px 0;
+  padding: ${(props) => props.main ? '16px 0' : '0'};
 
   @media ${props => props.theme.breakpoints.md}{
     font-size: ${(props) => props.main ? '56px' : '48px'};

@@ -5,19 +5,17 @@ export const Container = styled.div`
   position: fixed;
   z-index: 1000;
   width: 100%;
-  height: 7rem;
+  height: 5rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 2rem;
-  padding: 2rem 1rem 4rem;
+  padding: 1rem 1rem 0rem;
 
   background: ${(props) => props.colorAlt ? 
     'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
     'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
-
-    margin: ${(props) => props.divider ? "4rem 0" : "" };
-
+    
   /* margin-bottom: 4rem; */
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
@@ -32,6 +30,8 @@ export const Span = styled.span`
   font-size: 2rem;
 `;
 
+/* width 735일때 햄버거 만들어야 함 */
+
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -42,7 +42,7 @@ export const Div1 = styled.div`
   }
 `;
 export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
+  grid-area: 1 / 2 / 2 / 3;
   display: flex;
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {

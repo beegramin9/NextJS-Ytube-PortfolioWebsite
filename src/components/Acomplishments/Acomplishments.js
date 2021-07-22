@@ -8,7 +8,7 @@ import { arrayOfAccomplishmentData } from '../../constants/constants';
 
 const Acomplishments = () => (
   <Section>
-    <SectionTitle>Personal Acomplishments</SectionTitle>
+    <SectionTitle main>Personal Acomplishments</SectionTitle>
     <Boxes>
       {arrayOfAccomplishmentData.map( (card,index) => (
         <Box key={index}>

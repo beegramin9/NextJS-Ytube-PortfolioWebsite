@@ -3,7 +3,12 @@ import styled from 'styled-components'
 
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
-  background: #0F1624;
+
+  background: ${(props) => props.colorAlt ? 
+    'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
+    'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
+  //!* Dark 
+  /* background: #0F1624; */ 
   padding: 0rem;
   list-style:none;
   display: flex;
@@ -41,7 +46,11 @@ export const CarouselMobileScrollNode = styled.div`
 `
 
 export const CarouselItem = styled.div`
-  background: #0F1624;
+  /* background: ${(props) => props.colorAlt ? 
+    'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
+    'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'}; */
+  //!* Dark 
+  /* background: #0F1624; */ 
   border-radius: 3px;
   max-width: 196px;
 

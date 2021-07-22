@@ -1,45 +1,52 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { DiFirebase, DiReact, DiZend, DiPostgresql } from 'react-icons/di';
+
+import { FaReact, FaNodeJs } from "react-icons/fa";
+import { SiStyledComponents, SiDjango, SiMysql } from "react-icons/si"
+
+
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
 const Technologies = () =>  (
   <Section id="tech">
     <SectionDivider/>
-    <br/>
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle main>Technologies</SectionTitle>
     <SectionText>
-      I've worked with a range of Technologies in the web development world.
-      From Back-end to Design
+      I've worked with a range of Technologies in the web development world,
+      From Front-end to Back-end.
     </SectionText>
     <List>
       <ListItem>
-        <DiReact size="3em"/>
+        {/* <DiReact size="3em"/> */}
         <ListContainer>
           <ListTitle>Front-End</ListTitle>
-          <ListParagraph>Experience with <br/>
-                        React.js
+          <ListParagraph>
+            <FaReact size="2em"/>{'\u00A0'}React<br/>
+            <SiStyledComponents size="2em"/>{'\u00A0'}Styled Components<br/>
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3em"/>
+        {/* <DiFirebase size="3em"/> */}
         <ListContainer>
           <ListTitle>Back-End</ListTitle>
-          <ListParagraph>Experience with <br/>
-                        Node.js and Databases
+          <ListParagraph>
+            <FaNodeJs size="2em"/>{'\u00A0'}NodeJS<br/>
+            <SiDjango size="2em"/>{'\u00A0'}Django<br/>
           </ListParagraph>
         </ListContainer>
       </ListItem>
-      {/* <ListItem>
-        <DiZend size="3em"/>
+      <ListItem>
+        {/* <DiZend size="3em"/> */}
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
-          <ListParagraph>UI / UX<br/>
-                        tools like Figma
+          <ListTitle>Database</ListTitle>
+          <ListParagraph>
+            <SiMysql size="2em"/>{'\u00A0'}SQL<br/>
+            <DiFirebase size="2em"/>{'\u00A0'}ORM<br/>
           </ListParagraph>
         </ListContainer>
-      </ListItem> */}
+      </ListItem>
     </List>
   </Section>
 );

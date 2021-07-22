@@ -5,7 +5,7 @@ import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles
 import { arrayOfProject } from '../../constants/constants';
 
 const Projects = () => (
-  <Section nopadding id="projects">
+  <Section id="projects">
     <SectionDivider />
     <SectionTitle main>Projects</SectionTitle>
     <SectionText>Some of the projects started from a simple designless Youtube tutorials for me to learn new techs and concepts. <br></br>

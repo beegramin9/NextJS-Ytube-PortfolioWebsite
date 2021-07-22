@@ -27,7 +27,6 @@ const Timeline = () => {
   const handleScroll = () => {
     if (carouselRef.current) {
       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * arrayOfTimeLine.length);
-
       setActiveItem(index);
     }
   }
@@ -45,9 +44,7 @@ const Timeline = () => {
   return (
     <Section id="about">
       <SectionDivider/>
-      <br/>
-
-      <SectionTitle>About Me</SectionTitle>
+      <SectionTitle main>Education & Expierence</SectionTitle>
       <SectionText>
       The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
       </SectionText>
