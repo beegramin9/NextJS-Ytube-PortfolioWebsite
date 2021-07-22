@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { CarouselButton, CarouselButtonDot, CarouselButtons, TimelineCarouselContainer, TimelineCarouselItem,
+  CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyle';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { arrayOfTimeLine } from '../../constants/constants';
 
-const TOTAL_CAROUSEL_COUNT = arrayOfTimeLine.length;
+const TOTAL_TIMELINE_CAROUSEL_COUNT = arrayOfTimeLine.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
@@ -14,19 +15,20 @@ const Timeline = () => {
     return node.scrollTo({ left, behavior: 'smooth' });
   }
 
+  /* 메소드: scrollTo
+  속성: scrollWidth, scrollLeft */
   const handleClick = (e, i) => {
     e.preventDefault();
 
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / arrayOfTimeLine.length));
-      
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TOTAL_TIMELINE_CAROUSEL_COUNT));
       scroll(carouselRef.current, scrollLeft);
     }
   }
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * arrayOfTimeLine.length);
+      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TOTAL_TIMELINE_CAROUSEL_COUNT);
       setActiveItem(index);
     }
   }
@@ -48,13 +50,13 @@ const Timeline = () => {
       <SectionText>
       The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
       </SectionText>
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      <TimelineCarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {arrayOfTimeLine.map((item, index) => (
             <CarouselMobileScrollNode
               key={index}
-              final={index === TOTAL_CAROUSEL_COUNT - 1}>
-              <CarouselItem
+              final={index === TOTAL_TIMELINE_CAROUSEL_COUNT - 1}>
+              <TimelineCarouselItem
                 index={index}
                 id={`carousel__item-${index}`}
                 active={activeItem}
@@ -93,11 +95,11 @@ const Timeline = () => {
                   </CarouselItemImg>
                 </CarouselItemTitle>
                 <CarouselItemText>{item.text}</CarouselItemText>
-              </CarouselItem>
+              </TimelineCarouselItem>
             </CarouselMobileScrollNode>
           ))}
         </>
-      </CarouselContainer>
+      </TimelineCarouselContainer>
       <CarouselButtons>
         {arrayOfTimeLine.map((item, index) => {
           return (
@@ -112,7 +114,6 @@ const Timeline = () => {
           );
         })}
       </CarouselButtons>
-      <SectionDivider />
     </Section>
   );
 };

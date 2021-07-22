@@ -1,19 +1,7 @@
 import styled from 'styled-components';
 
-export const Img = styled.img`
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width:100%;
-  height:100%;
-  object-fit: cover;
-  &:hover {
-    transition: transform 500ms ease-in-out;
-    transform: scale(1.1);
-    opacity: 1.5;
-  }
-`
 
-export const GridContainer = styled.section`
+/* export const GridContainer = styled.section`
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 padding: 3rem;
@@ -26,17 +14,33 @@ row-gap: 3rem;
   padding: 2rem;
   padding-bottom: 0;
 }
+` */
 
-`
 export const BlogCard = styled.div`
   border-radius: 10px;
+  
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
-  width: 400px;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    width: 100%;
-  }
 `;
+
+/* @media ${(props) => props.theme.breakpoints.sm} {
+  width: 100%;
+}  */
+export const Img = styled.img`
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width:100%;
+  /* 100%로 하면 각각 이미지마다 크기가 달라지는데,
+  아마 내가 GIF파일을 만들었을 때부터 크기가 달라서
+  이렇게 픽셀을 정해주는것만 방법인듯 */
+  height:185px;
+  object-fit: cover;
+  &:hover {
+    transition: transform 500ms ease-in-out;
+    transform: scale(1.1);
+    opacity: 1.5;
+  }
+`
 
 export const TitleContent = styled.div`
   text-align: center;
@@ -100,11 +104,11 @@ export const ExternalLinks = styled.a`
 color:#d4c0c0;
 font-size: 1.6rem;
 padding:1rem 1.5rem;
-background: #6b3030;
+background: ${(props) => props.theme.colors.redbrown};
 border-radius: 15px;
 transition: 0.5s;
 &:hover{
-  background: #801414;
+  background: ${(props) => props.theme.colors.red};
 }
 `;
 

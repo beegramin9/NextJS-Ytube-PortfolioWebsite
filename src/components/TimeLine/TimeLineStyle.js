@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 
-export const CarouselContainer = styled.ul`
+export const TimelineCarouselContainer = styled.ul`
   max-width: 1040px;
 
   background: ${(props) => props.colorAlt ? 
@@ -38,6 +38,8 @@ export const CarouselContainer = styled.ul`
     margin-bottom: 8px;
   }
 `
+
+
 export const CarouselMobileScrollNode = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
@@ -45,10 +47,8 @@ export const CarouselMobileScrollNode = styled.div`
   }
 `
 
-export const CarouselItem = styled.div`
-  /* background: ${(props) => props.colorAlt ? 
-    'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
-    'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'}; */
+
+export const TimelineCarouselItem = styled.div`
   //!* Dark 
   /* background: #0F1624; */ 
   border-radius: 3px;
@@ -61,16 +61,16 @@ export const CarouselItem = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
     min-width: 120px;
-    background: #0E131F;
+    /* background: #0E131F; */
     padding: 4px;
-    align-content: start;
+    align-content: start;   
     scroll-snap-align: start;
     border-radius: 3px;
     overflow: visible;
     position: relative;
     height: fit-content;
     
-    ${(props) => props.active === props.index ? `opacity: 1` : `opacity: 0.5`}; 
+    ${(props) => props.active === props.index ? `opacity: 0.7` : `opacity: 1`}; 
   }
 `
 
@@ -127,6 +127,7 @@ export const CarouselItemText = styled.p`
     padding-right: 0;
   }
 `
+
 export const CarouselButtons = styled.div`
   width: 288px;
 
@@ -145,6 +146,7 @@ export const CarouselButton = styled.button`
   background: none;
   padding: 4px;
   border: none;
+
   cursor: pointer;
   margin-right: 4px;
   opacity: ${(props) => props.active === props.index ? `1` : `.33`};
@@ -156,7 +158,8 @@ export const CarouselButton = styled.button`
 `
 
 export const CarouselButtonDot = styled.div`
-  background-color: white;
+  //!* Dark mode: background-color: white;
+  background-color: ${(props) => props.theme.colors.buttonpurple};
   border-radius: 10px;
   margin: auto;
   width: 3px;

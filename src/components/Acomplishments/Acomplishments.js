@@ -8,6 +8,7 @@ import { arrayOfAccomplishmentData } from '../../constants/constants';
 
 const Acomplishments = () => (
   <Section>
+    <SectionDivider />
     <SectionTitle main>Personal Acomplishments</SectionTitle>
     <Boxes>
       {arrayOfAccomplishmentData.map( (card,index) => (
