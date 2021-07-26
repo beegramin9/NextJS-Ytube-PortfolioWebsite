@@ -63,7 +63,6 @@ const Timeline = () => {
       // 년도 하나의 픽셀을 알면, 프로젝트를 위한것도 알수있을듯
       // 년도카드하나 가로픽셀 150px, .7곱한값 170px, 
       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TOTAL_TIMELINE_CAROUSEL_COUNT);
-      console.log(index);
       setActiveItem(index);
     }
   }
