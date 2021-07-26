@@ -4,7 +4,7 @@ export const Img = styled.img`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width:100%;
-  height:100%;
+  height:185px;
   object-fit: cover;
   &:hover {
     transition: transform 500ms ease-in-out;
@@ -75,7 +75,7 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
-  height: 18em;
+  height: 22em;
   padding: 0 50px;
   color: ${props => props.theme.colors.lightblack}; /* Dark mode: #e4e6e7  */
   font-style: 2rem;
