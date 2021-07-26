@@ -18,7 +18,6 @@ row-gap: 3rem;
 
 export const BlogCard = styled.div`
   border-radius: 10px;
-  
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
 `;
@@ -79,7 +78,7 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
-  height: 18em;
+  height: 20em;
   padding: 0 50px;
   color: ${props => props.theme.colors.lightblack}; /* Dark mode: #e4e6e7  */
   font-style: 2rem;
@@ -94,10 +93,10 @@ export const CardInfo = styled.p`
 
 export const UtilityList = styled.ul`
   list-style-type: none;
-  padding: 0;
   display: flex;
   justify-content: space-around;
   margin: 1rem 0 1.5rem 0;
+  padding: 1rem 0 1.5rem 0;
 `;
 
 export const ExternalLinks = styled.a`

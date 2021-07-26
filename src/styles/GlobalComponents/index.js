@@ -76,9 +76,7 @@ export const SectionText = styled.p`
   }
 `
 
-//! 가르는 선
 export const SectionDivider = styled.div`
-
   width: 64px;
   height: 6px;
   border-radius: 10px;
@@ -99,6 +97,8 @@ export const SectionDivider = styled.div`
     height: 2px;
   }
 `
+
+//! Unused
 export const SectionSubText = styled.p`
   max-width: 800px;
   font-weight: 300;

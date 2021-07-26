@@ -20,33 +20,30 @@ const Projects = () => {
   }
 
   const handleClick = (e, i) => {
-    console.log('클릭index',i);
-    // console.log('index',i);
-    // console.log('handleClick carouselRef.current:',carouselRef.current);
-    console.log('handleClick 전체길이 scrollWidth:',carouselRef.current.scrollWidth);
     e.preventDefault();
     if (carouselRef.current) {
-      /* Projects scrollWidth:
-      small일때 1980px, (맨마지막에 공백이 조금 있음)
-      large일때 1760px */
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 1 * (i / TOTAL_PROJECT_CAROUSEL_COUNT));
-      // 하나 400px, 전체 1760, 1/4, 
-      console.log('왼쪽으로 scroll한 길이:', scrollLeft);
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * (i / TOTAL_PROJECT_CAROUSEL_COUNT) *.8);
+      //!* 변수이다. Javascript scroll의 속성이 아니다.
+      //!* 이 값은 카드 한장 410px보다 살짝 10px정도 큰 놈이어야 한다.
+      //! 왼쪽에서부터 scroll된 scrollLeft의 양, 즉 각 카드의 가로위치를 나타낸다고 보면 된다.
       scroll(carouselRef.current, scrollLeft);
     }
   }
-  /* 마지막일때는 뭔가 있어야하는거 맞는거같음... */
 
   const handleScroll = () => {
-    // console.log('handleScroll carouselRef.current:',carouselRef.current);
-    // console.log('handleScroll scrollLeft:',carouselRef.current.scrollLeft);
-    // console.log('handleScroll scrollWidth:',carouselRef.current.scrollWidth);
     if (carouselRef.current) {
-      /* 디자인은 됐고 결국 여기를 봐야하는 것임 */
-      // 마지막카드를 눌러도 안들어옴. carouselRef.current가 없다는 것
-      console.log('변수말고 js scorllleft:',carouselRef.current.scrollLeft);
-      const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT);
-      console.log('전체길이에따른 index:',index);
+      console.log('변수말고 js scrollLeft:',carouselRef.current.scrollWidth);
+      const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
+      //!* 요 총 값이 1이 되어야 한다? 그렇지! 그렇게해서 곱해주는 숫자를 만들어줘야하는거야
+
+      //! 5개일때: carouselRef.current.scrollLeft: 410px, 아마 카드 크기에 따라 가는듯
+      //! 얘는 min-content랑 똑같다. min-width: ${({ final }) => final ? `100%;` : `410px`};
+      //! 5개일때: carouselRef.current.scrollWidth: 전체크기, 2680px
+      //! 410* 4 = 1640, 전체 감싸는 섹션 최대가 1040px
+      //! 마지막엔 한개밖에 없는데 그래도 채우긴 채워야되니까 1040으로 된것
+      //! 1640 + 1040이 나와서 2680이 되는 것이다.
+      //todo 이 비율에 따라서 불이 다 들어오거나 작아지는데, 이걸 숫자로 조절하려니까 안되는겨...
+
       setActiveItem(index);
     }
   }

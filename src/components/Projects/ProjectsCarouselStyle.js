@@ -10,9 +10,7 @@ export const ProjectsCarouselContainer = styled.ul`
     justify-content: space-between; 
     border-radius: 10px;
     /* overflow-x: hidden; */
-
-
-    margin-bottom: 80px;
+    margin-bottom: 8px;
 
     scrollbar-width: none;  
     &::-webkit-scrollbar {
@@ -24,7 +22,11 @@ export const ProjectsCarouselContainer = styled.ul`
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
     justify-content: initial;
-    margin-bottom: 8px;
+    
+
+    &:hover {
+      cursor: pointer;
+    }
 `
 
 /* 원래 캐러젤같았으면 모바일상태일때부터 이게 작동해야되는데
@@ -37,14 +39,14 @@ export const ProjectsCarouselContainer = styled.ul`
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
     justify-content: initial;
-    margin-bottom: 8px;
 } 
 */
 
 export const CarouselMobileScrollNode = styled.div`
   /* 건드는거 아님  */
   display: flex;
-  min-width: ${({ final }) => final ? `120%;` : `min-content`};
+  min-width: ${({ final }) => final ? `100%;` : `410px`};
+
   /* 이걸 없애서 sm이나 최대일때나 scrollWidth가 같아졌어! */
 `
 
@@ -64,7 +66,7 @@ export const ProjectsCarouselItem = styled.div`
 
 `
 /* 
- @media ${props => props.theme.breakpoints.md} {
+@media ${props => props.theme.breakpoints.md} {
     max-width: 124px;
   }
   
@@ -88,7 +90,7 @@ export const CarouselButtons = styled.div`
     display: flex;
     visibility: visible;
     margin-bottom: 48px;
-    color: red;
+    color: ${(props) => props.theme.colors.redbrown};
 `
 /* display: none;
 visibility: hidden;

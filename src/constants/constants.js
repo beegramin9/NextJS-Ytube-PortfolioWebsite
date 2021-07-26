@@ -47,6 +47,17 @@ export const arrayOfProject = [
     link: 'https://google.com',
     github: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
     id: 3,
+  },
+  {
+    title: 'Movie Archive Webapp',
+    description: "This project works on a movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom FetchAPIandPagination Hook, styled components, routers and loading spinner. The social media icons at the header and footer lead to my social accounts, and About page contains a prologue of this project.",
+    image: '/images/projects/React.gif',
+    tags: ['https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white', 
+          'https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white', 
+          'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'],
+    link: 'https://google.com',
+    github: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
+    id: 4,
   }
 ];
 
