@@ -26,9 +26,6 @@ const Timeline = () => {
   }
 
   const handleClick = (e, i) => {
-    console.log('index',i);
-    // console.log('handleClick carouselRef.current:',carouselRef.current);
-    // console.log('handleClick scrollWidth:',carouselRef.current.scrollWidth);
     e.preventDefault();
     //!* scrollWidth
     // measurement of the width of an element's content, 
@@ -48,9 +45,6 @@ const Timeline = () => {
   }
   
   const handleScroll = () => {
-    // console.log('handleScroll carouselRef.current:',carouselRef.current);
-    // console.log('handleScroll scrollLeft:',carouselRef.current.scrollLeft);
-    // console.log('handleScroll scrollWidth:',carouselRef.current.scrollWidth);
     //!* scrollLeft
     // the number of pixels that an element's content is scrolled from its left edge.
     // 왼쪽에서 오른쪽으로 간다면, 왼쪽에서 아무 스크롤도 없었을 때는 0이다.
@@ -82,7 +76,9 @@ const Timeline = () => {
       <SectionDivider/>
       <SectionTitle main>Education & Expierence</SectionTitle>
       <SectionText>
-      The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+      I have always had a great interest in discovering new values and
+      broadening experience which, not only led to software development but
+      other great adventures.
       </SectionText>
       <TimelineCarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ProjectsCarouselContainer = styled.ul`
-    max-width: 1040px;
     background: ${(props) => props.theme.colors.background1 } ;
 
     padding: 0rem;
@@ -9,24 +8,18 @@ export const ProjectsCarouselContainer = styled.ul`
     display: flex;
     justify-content: space-between; 
     border-radius: 10px;
-    /* overflow-x: hidden; */
-    margin-bottom: 8px;
-
+    
     scrollbar-width: none;  
     &::-webkit-scrollbar {
-        display: none;
+      display: none;
     }
-  
+    
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     touch-action: pan-x;
     justify-content: initial;
-    
-
-    &:hover {
-      cursor: pointer;
-    }
+    margin-bottom: 8px;
 `
 
 /* 원래 캐러젤같았으면 모바일상태일때부터 이게 작동해야되는데

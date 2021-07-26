@@ -62,16 +62,22 @@ export const arrayOfProject = [
 ];
 
 export const arrayOfTimeLine = [
-  { year: 2017, text: 'Started my journey', },
-  { year: 2018, text: 'Worked as a freelance developer', },
-  { year: 2019, text: 'Founded JavaScript Mastery', },
-  { year: 2020, text: 'Shared my projects with the world', },
-  { year: 2021, text: 'Started my own platform', },
+  { year: 2013, text: 'Majored in Mathematics Education, Inha Univ, Korea', },
+  { year: 2018, text: 'Exchange student in Oldenburg Univ, Germany', },
+  { year: 2019, text: 'First started programming with Python', },
+  { year: 2020, text: 'Completed coding bootcamp at Hoseo training college, Korea', },
+  { year: 2021, text: 'Building my own projects', },
 ];
 
 export const arrayOfAccomplishmentData = [
-  { number: 20, text: 'Open Source Projects'},
-  { number: 1000, text: 'Students', },
-  { number: 1900, text: 'Github Followers', },
-  { number: 5000, text: 'Github Stars', }
+  { number: '2+', text: 'Competent technology stacks', },
+  { number: 777, text: 'Total Github commits', },
+  { number: 20, text: 'Countries I have travelled'},
+  { number: 2, text: 'Bilingual', }
 ];
+
+/* 커밋 연속하는거 
+hobbies?
+Language?
+Tech stacks
+Total Github commits */
