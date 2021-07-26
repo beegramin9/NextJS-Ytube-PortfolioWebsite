@@ -20,19 +20,33 @@ const Projects = () => {
   }
 
   const handleClick = (e, i) => {
+    console.log('클릭index',i);
+    // console.log('index',i);
+    // console.log('handleClick carouselRef.current:',carouselRef.current);
+    console.log('handleClick 전체길이 scrollWidth:',carouselRef.current.scrollWidth);
     e.preventDefault();
     if (carouselRef.current) {
-      /* css에서 변할수 있을만한게 더이상 없음, 
-      남은건 js인것뿐임 */
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * .9 * (i / TOTAL_PROJECT_CAROUSEL_COUNT));
+      /* Projects scrollWidth:
+      small일때 1980px, (맨마지막에 공백이 조금 있음)
+      large일때 1760px */
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 1 * (i / TOTAL_PROJECT_CAROUSEL_COUNT));
+      // 하나 400px, 전체 1760, 1/4, 
+      console.log('왼쪽으로 scroll한 길이:', scrollLeft);
       scroll(carouselRef.current, scrollLeft);
     }
   }
+  /* 마지막일때는 뭔가 있어야하는거 맞는거같음... */
 
   const handleScroll = () => {
+    // console.log('handleScroll carouselRef.current:',carouselRef.current);
+    // console.log('handleScroll scrollLeft:',carouselRef.current.scrollLeft);
+    // console.log('handleScroll scrollWidth:',carouselRef.current.scrollWidth);
     if (carouselRef.current) {
       /* 디자인은 됐고 결국 여기를 봐야하는 것임 */
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.9)) * TOTAL_PROJECT_CAROUSEL_COUNT);
+      // 마지막카드를 눌러도 안들어옴. carouselRef.current가 없다는 것
+      console.log('변수말고 js scorllleft:',carouselRef.current.scrollLeft);
+      const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT);
+      console.log('전체길이에따른 index:',index);
       setActiveItem(index);
     }
   }
@@ -98,6 +112,7 @@ const Projects = () => {
     </ProjectsCarouselContainer>
     {/* </GridContainer> */}
     <CarouselButtons>
+      {/* 여기 index는 캐러질인덱스가 아니고 constant 인덱스 */}
       {arrayOfProject.map((item, index) => {
         return (
           <CarouselButton

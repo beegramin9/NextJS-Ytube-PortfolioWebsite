@@ -12,23 +12,58 @@ const Timeline = () => {
   const carouselRef = useRef();
 
   const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
+    //todo scrollTo() scrolls to  a particular set of coordinates inside a given element.
+    /* 즉 이게 있어야 슬라이딩이 가능함, 무슨 이유에선지
+    sm일땐 되는데 그 이상에서는 안됨 */
+    //!* element.scrollTo(x-coord, y-coord)
+    //!* element.scrollTo(ScrollToOptions)
+    // left: the number of pixels along the X axis to scroll the window or element.
+    // top: same with the Y axis.
+    
+    return node.scrollTo({ left: left, behavior: 'smooth' });
+    //todo node element를 x축으로 left만큼 smooth하게 scroll이 아니라!
+    //todo node element를 x축의 left로!!! smooth하게 이동
   }
 
-  /* 메소드: scrollTo
-  속성: scrollWidth, scrollLeft */
   const handleClick = (e, i) => {
+    console.log('index',i);
+    // console.log('handleClick carouselRef.current:',carouselRef.current);
+    // console.log('handleClick scrollWidth:',carouselRef.current.scrollWidth);
     e.preventDefault();
-
+    //!* scrollWidth
+    // measurement of the width of an element's content, 
+    // including content not visible on the screen due to overflow
+    // = 스크롤바 없이 모든 콘텐트를 보이게 하기 위한 최소 길이, 반올림된 정수값
+    // padding, ::before&after만 고려하고 margin, border는 고려하지 않는다.
+    /* Timeline scrollWidth: 1268  */
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TOTAL_TIMELINE_CAROUSEL_COUNT));
+      /* scrollWidth, scrollLeft값이 float가 나오기 때문에... */
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TOTAL_TIMELINE_CAROUSEL_COUNT)); 
+      // 전체 5개가 있는데 0번에서 3번을 눌렀으면, 전체필요길이의 3/5 * alpha만큼 오른쪽으로 이동해라
+      // 그러면 -, + 는 어떻게 해요?
+      console.log('왼쪽으로 scroll한 길이:', scrollLeft);
+      //! 누적으로 나오는게 아니라 인덱스에 비례해서 나오는 것
       scroll(carouselRef.current, scrollLeft);
     }
   }
-
+  
   const handleScroll = () => {
+    // console.log('handleScroll carouselRef.current:',carouselRef.current);
+    // console.log('handleScroll scrollLeft:',carouselRef.current.scrollLeft);
+    // console.log('handleScroll scrollWidth:',carouselRef.current.scrollWidth);
+    //!* scrollLeft
+    // the number of pixels that an element's content is scrolled from its left edge.
+    // 왼쪽에서 오른쪽으로 간다면, 왼쪽에서 아무 스크롤도 없었을 때는 0이다.
+    // padding, ::before&after만 고려하고 margin, border는 고려하지 않는다.
     if (carouselRef.current) {
+      // 스크롤된 길이/전체 길이, 0.7은 위랑 똑같아야 할 것이고, 
+      // 전체 개수를 곱해 round함으로써 index를 대략적으로라도 맞힌다!
+      // 0.7이라는 것은 결국 카드하나를 움직이는데 값을 조절해야하는것
+    
+      // 년도 하나의 픽셀을 알면, 프로젝트를 위한것도 알수있을듯
+      // 년도카드하나 가로픽셀 150px, .7곱한값 170px, 
       const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TOTAL_TIMELINE_CAROUSEL_COUNT);
+      console.log(index);
       setActiveItem(index);
     }
   }

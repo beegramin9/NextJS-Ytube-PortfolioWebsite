@@ -43,11 +43,14 @@ export const ProjectsCarouselContainer = styled.ul`
 
 export const CarouselMobileScrollNode = styled.div`
   /* 건드는거 아님  */
-    @media ${props => props.theme.breakpoints.sm} {
-        display: flex;
-        min-width: ${({ final }) => final ? `120%;` : `min-content`}
-    }
+  display: flex;
+  min-width: ${({ final }) => final ? `120%;` : `min-content`};
+  /* 이걸 없애서 sm이나 최대일때나 scrollWidth가 같아졌어! */
 `
+
+  /* @media ${props => props.theme.breakpoints.sm} {
+    min-width: ${({ final }) => final ? `120%;` : `min-content`};
+  } */
 
 export const ProjectsCarouselItem = styled.div`
     border-radius: 3px;
