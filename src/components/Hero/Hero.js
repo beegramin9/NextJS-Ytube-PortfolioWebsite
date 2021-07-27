@@ -4,7 +4,6 @@ import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponent
 import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
-console.log(process.env.PUBLIC_URL);
 const Hero = (props) => (
   <Section grid nopadding>
     <LeftSection>

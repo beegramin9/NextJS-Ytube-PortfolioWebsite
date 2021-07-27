@@ -16,13 +16,10 @@ export const Container = styled.div`
     'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
     'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
     
-  /* margin-bottom: 4rem; */
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5rem;
   }
 `;
 
@@ -39,62 +36,6 @@ export const Div1 = styled.div`
     grid-area: 1 / 1 / 2 / 3;
   }
 `;
-export const Div2 = styled.div`
-  grid-area: 1 / 2 / 2 / 3;
-  display: flex;
-  justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
-  }
-`;
-export const Div3 = styled.div`
-  position: relative;
-  bottom: 10px;
-  grid-area: 1 / 5 / 2 / 6;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
-  }
-`;
-
-// Navigation Links
-export const NavLink = styled.a`
-  font-size: 2rem;
-  line-height: 32px;
-  color: ${props => props.theme.colors.pastelwhite};
-  transition: 0.4s ease;
-  &:hover {
-    color: #fff;
-    opacity: 1;
-    cursor: pointer;
-  }
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem;
-  }
-`;
-
-// Social Icons 
-export const SocialIcons = styled.a`
-  transition: 0.3s ease;
-  color: ${props => props.theme.colors.pastelwhite};
-  border-radius: 50px;
-  padding: 8px;
-&:hover {
-    background-color: ${props => props.theme.colors.darkpurple};
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-`
-//!* Hamburger
-
-
-
-
-
-
 
 
 //! DropDown Contact, 아직 안쓰임
