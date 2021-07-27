@@ -57,7 +57,7 @@ export const RightNav = styled.div`
 
 
 export const Div2 = styled.div`
-  flex: 3;
+  flex: 6;
   display: flex;
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -68,6 +68,7 @@ export const Div2 = styled.div`
 `;
 
 export const Div3 = styled.div`
+  flex: 3;
   position: relative;
   bottom: 10px;
   display: flex;
