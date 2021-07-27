@@ -5,7 +5,10 @@ import { DiCssdeck } from 'react-icons/di';
 
 import { Container, Div1, Div2, Div3, NavLink, SocialIcons,  Span } from './HeaderStyles';
 
-const Header = () =>  (
+const Header = () =>  {
+  /* 만들 hamburger Component에 OnClick으로 handleClickHamburger을 주면 된다.
+  document가 없으니, useRef로 가져와서 current.classList.toggle('hamburger-open ') */
+  return (
   <Container>
     <Div1>
       <Link href="/">
@@ -14,6 +17,7 @@ const Header = () =>  (
       </a>
       </Link>
     </Div1>
+    {/* 여기서부터 아래까지 media를 써서 햄버거로 */}
     <Div2>
       <li>
         <Link href="#projects">
@@ -42,8 +46,9 @@ const Header = () =>  (
         <AiFillInstagram size="3rem"/>
       </SocialIcons>
     </Div3>
-
+    {/*  */}
   </Container>
 );
+};
 
 export default Header;

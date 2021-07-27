@@ -30,8 +30,6 @@ export const Span = styled.span`
   font-size: 2rem;
 `;
 
-/* width 735일때 햄버거 만들어야 함 */
-
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -90,6 +88,14 @@ export const SocialIcons = styled.a`
     cursor: pointer;
   }
 `
+//!* Hamburger
+
+
+
+
+
+
+
 
 //! DropDown Contact, 아직 안쓰임
 export const ContactDropDown = styled.button`
