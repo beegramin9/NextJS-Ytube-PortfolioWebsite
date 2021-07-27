@@ -17,13 +17,13 @@ export const Section = styled.section`
 
   @media ${(props) => props.theme.breakpoints.md} {
     padding: ${(props) => props.nopadding ? "0" : "52px 16px 0" } ;
-    width: calc(100vw - 32px);
+    width: calc(100vw - 100px);
     flex-direction: ${(props) => props.row ? "row" : "column" };
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => props.nopadding ? "0" : "52px 16px 0" } ;
-    width: calc(100vw - 32px);
+    width: 96%;
     flex-direction: column;
   }
 `
