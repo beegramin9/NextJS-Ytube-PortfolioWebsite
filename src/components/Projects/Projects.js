@@ -32,7 +32,6 @@ const Projects = () => {
 
   const handleScroll = () => {
     if (carouselRef.current) {
-      console.log('변수말고 js scrollLeft:',carouselRef.current.scrollWidth);
       const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
       //!* 요 총 값이 1이 되어야 한다? 그렇지! 그렇게해서 곱해주는 숫자를 만들어줘야하는거야
 

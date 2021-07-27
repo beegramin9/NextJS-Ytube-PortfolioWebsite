@@ -13,16 +13,14 @@ const Timeline = () => {
 
   const scroll = (node, left) => {
     //todo scrollTo() scrolls to  a particular set of coordinates inside a given element.
-    /* 즉 이게 있어야 슬라이딩이 가능함, 무슨 이유에선지
-    sm일땐 되는데 그 이상에서는 안됨 */
+    //! 터치가 가능한 모바일에서만 캐러젤처럼 스크롤링이 가능함
     //!* element.scrollTo(x-coord, y-coord)
     //!* element.scrollTo(ScrollToOptions)
     // left: the number of pixels along the X axis to scroll the window or element.
     // top: same with the Y axis.
     
     return node.scrollTo({ left: left, behavior: 'smooth' });
-    //todo node element를 x축으로 left만큼 smooth하게 scroll이 아니라!
-    //todo node element를 x축의 left로!!! smooth하게 이동
+    //todo node element를 x축의 (left,0 )로 smooth하게 이동
   }
 
   const handleClick = (e, i) => {
@@ -34,11 +32,9 @@ const Timeline = () => {
     // padding, ::before&after만 고려하고 margin, border는 고려하지 않는다.
     /* Timeline scrollWidth: 1268  */
     if (carouselRef.current) {
-      /* scrollWidth, scrollLeft값이 float가 나오기 때문에... */
       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TOTAL_TIMELINE_CAROUSEL_COUNT)); 
       // 전체 5개가 있는데 0번에서 3번을 눌렀으면, 전체필요길이의 3/5 * alpha만큼 오른쪽으로 이동해라
-      // 그러면 -, + 는 어떻게 해요?
-      console.log('왼쪽으로 scroll한 길이:', scrollLeft);
+      console.log('왼쪽에서부터 scroll한 길이, 즉 x좌표 (scrollLeft, 0):', scrollLeft);
       //! 누적으로 나오는게 아니라 인덱스에 비례해서 나오는 것
       scroll(carouselRef.current, scrollLeft);
     }
