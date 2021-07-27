@@ -14,7 +14,7 @@ const Home = () => {
   //todo Hero, BgAnimation 겹치게 해야 함
   return (
     <Layout>
-        <Section /* grid */ flex row >
+        <Section /* grid */ flex row>
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
