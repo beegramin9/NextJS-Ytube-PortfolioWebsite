@@ -39,7 +39,7 @@ export const RightNav = styled.div`
   display: flex;
   grid-area: 1 / 2 / 2 / 6;
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 4;
     flex-direction: column;
     justify-content: flex-start;
     background: ${(props) => props.theme.colors.darkpurple};
@@ -57,23 +57,24 @@ export const RightNav = styled.div`
 
 
 export const Div2 = styled.div`
-  flex: 6;
+  flex: 7;
   display: flex;
+  gap: 0.25rem;
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: .5rem;
   }
 `;
 
 export const Div3 = styled.div`
-  flex: 3;
+  flex: 2;
   position: relative;
   bottom: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-right: 1rem;
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: row;
     align-items: center;
