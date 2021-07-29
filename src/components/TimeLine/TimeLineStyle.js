@@ -87,6 +87,7 @@ export const CarouselItemTitle = styled.h4`
   margin-bottom: 8px;
 
   @media ${props => props.theme.breakpoints.md} {
+    font:  "Space Grotesk, sans-serif";
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 4px;

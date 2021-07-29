@@ -62,7 +62,7 @@ export const arrayOfProject = [
 ];
 
 export const arrayOfTimeLine = [
-  { year: 2015, text: 'Majored in Mathematics Education, Inha Univ, Korea', },
+  { year: 2013, text: 'Majored in Mathematics Education, Inha Univ, Korea', },
   { year: 2018, text: 'Exchange student in Oldenburg Univ, Germany', },
   { year: 2019, text: 'First started programming with Python', },
   { year: 2020, text: 'Completed coding bootcamp at Hoseo training college, Korea', },
@@ -76,8 +76,6 @@ export const arrayOfAccomplishmentData = [
   { number: 2, text: 'Bilingual', }
 ];
 
-/* 커밋 연속하는거 
-hobbies?
-Language?
-Tech stacks
-Total Github commits */
+/* 
+https://heropy.blog/2018/01/10/netlify/
+*/
