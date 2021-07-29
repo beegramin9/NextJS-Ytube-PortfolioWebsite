@@ -17,10 +17,10 @@ const Footer = () => {
       </LinkList>
 
       <SocialIconsContainer>
-        <SocialContainer>
         <CompanyContainer>
           <Slogan>Innovating one project at a time</Slogan>
         </CompanyContainer>
+        <SocialContainer>
         <SocialIcons href="https://github.com" style={{color:'rgb(135, 209, 242)'}}>
           <AiFillGithub size="3rem"/>
         </SocialIcons>

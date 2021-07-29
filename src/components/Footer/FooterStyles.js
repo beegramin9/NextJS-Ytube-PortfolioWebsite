@@ -56,14 +56,14 @@ justify-content: space-between;
 }
 
 @media ${props => props.theme.breakpoints.sm}{
-  display: flex;
+  	display: flex;
 	width: 100%;
-  flex-direction: column;
+  	flex-direction: column;
 }
 `
 
 export const CompanyContainer = styled.div`
-  display: flex;
+  	display: flex;
 	align-items:baseline;
 	flex-wrap: wrap;
 	margin-right: auto;
@@ -77,7 +77,7 @@ export const CompanyContainer = styled.div`
 	@media ${props => props.theme.breakpoints.sm}{
 		display: flex;
 		flex-direction: column;
-		margin: 0 0 32px;
+		margin: 0 0 4px;
 		align-items: center;
 	}
 `
