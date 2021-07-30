@@ -77,7 +77,7 @@ export const TimelineCarouselItem = styled.div`
 export const CarouselItemTitle = styled.h4`
   font-weight: bold;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 24px;
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
@@ -87,7 +87,6 @@ export const CarouselItemTitle = styled.h4`
   margin-bottom: 8px;
 
   @media ${props => props.theme.breakpoints.md} {
-    font:  "Space Grotesk, sans-serif";
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 4px;
