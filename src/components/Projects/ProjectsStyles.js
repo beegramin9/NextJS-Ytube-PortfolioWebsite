@@ -80,14 +80,12 @@ export const Intro = styled.div`
 export const CardInfo = styled.p`
   width: 100%;
   height: 19.5em;
-  padding: 0 50px;
+  padding: 0 5rem;
   color: ${props => props.theme.colors.lightblack}; /* Dark mode: #e4e6e7  */
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding:.3rem
-  
+ 
 }
 `;
 
