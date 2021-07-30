@@ -71,7 +71,7 @@ const Projects = () => {
     {/* CarouselContainer가 GridContainer처럼 색깔, 크기가 정해지지 않은 거야 */}
     <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll}>
       <>
-        {arrayOfProject.map(({ id, title, description, image, tags, link, github }, index) => (
+        {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
           <CarouselMobileScrollNode
           key={index}
           final={index === TOTAL_PROJECT_CAROUSEL_COUNT - 1}>
@@ -98,7 +98,7 @@ const Projects = () => {
                 </TitleContent>
                 <UtilityList>
                   <ExternalLinks href={link}>Link</ExternalLinks>
-                  <ExternalLinks href={github}>Github</ExternalLinks>
+                  <ExternalLinks href={readme}>Readme</ExternalLinks>
                 </UtilityList>
               </BlogCard>
             </ProjectsCarouselItem>            

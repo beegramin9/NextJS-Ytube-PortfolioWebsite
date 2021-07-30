@@ -2,15 +2,14 @@
 //! Projects Component
 export const arrayOfProject = [
   {
-    title: 'Momentum Clone',
-    description: "This project started from a plain CSS-less todo-list tutorial, improved after to be a Momentum Clone. The most well-marked new feature is the separated pending and finished list. where todos are transferable onto another section, data persistence supported by Local Storage. Other new features are Alert, Weather and background image API which will be reusable at any needed time, name form and clock with cool CSS.",
-    image: '/images/projects/Momentum.gif',
-    tags: ['https://img.shields.io/badge/LocalStorage-FF3621?style=flat-square&logo=Databricks&logoColor=white',
-          'https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white', 
-          'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white', 
-          'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
-    link: 'https://google.com',
-    github: 'https://github.com/beegramin9/HCJ-Nomad-MomentumClone',
+    title: 'Movie Archive Webapp',
+    description: "This project works on a movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom FetchAPIandPagination Hook, styled components, routers and loading spinner. The social media icons at the header and footer lead to my social accounts, and About page contains a prologue of this project.",
+    image: '/images/projects/React.gif',
+    tags: ['https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white', 
+          'https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white', 
+          'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'],
+    link: 'https://beegramin9.github.io/ReactJS-Nomad-MovieApp/#/',
+    readme: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
     id: 0,
   },
   {
@@ -22,9 +21,22 @@ export const arrayOfProject = [
     'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white', 
     'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
     link: 'https://google.com',
-    github: 'https://github.com/beegramin9/HCJ-Nomad-PaintBrushClone',
+    readme: 'https://github.com/beegramin9/HCJ-Nomad-PaintBrushClone',
     id: 1,
   },
+  {
+    title: 'Momentum Clone',
+    description: "This project started from a plain CSS-less todo-list tutorial, improved after to be a Momentum Clone. The most well-marked new feature is the separated pending and finished list. where todos are transferable onto another section, data persistence supported by Local Storage. Other new features are Alert, Weather and background image API which will be reusable at any needed time, name form and clock with cool CSS.",
+    image: '/images/projects/Momentum.gif',
+    tags: ['https://img.shields.io/badge/LocalStorage-FF3621?style=flat-square&logo=Databricks&logoColor=white',
+          'https://img.shields.io/badge/Javascript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white', 
+          'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white', 
+          'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
+    link: 'https://google.com',
+    readme: 'https://github.com/beegramin9/HCJ-Nomad-MomentumClone',
+    id: 2,
+  },
+  
   {
     title: 'Calculator Clone',
     description: "The calculator functionality is pulled through by Javascript ES6 Class, which made easier to store and call the values and operator functions the separately. The number blocks and button blocks are constructed within CSS3 grid, flex, which made easier to remain intact when the web moves responsively.",
@@ -34,18 +46,7 @@ export const arrayOfProject = [
     'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white', 
     'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
     link: 'https://google.com',
-    github: 'https://github.com/beegramin9/HCJ-Nomad-CalculatorClone',
-    id: 2,
-  },
-  {
-    title: 'Movie Archive Webapp',
-    description: "This project works on a movie list api, added with custom responsive design. It follows the conventional React folder structure which makes it scalable and sustainable. There are many reusable features such as custom FetchAPIandPagination Hook, styled components, routers and loading spinner. The social media icons at the header and footer lead to my social accounts, and About page contains a prologue of this project.",
-    image: '/images/projects/React.gif',
-    tags: ['https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white', 
-          'https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white', 
-          'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'],
-    link: 'https://google.com',
-    github: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
+    readme: 'https://github.com/beegramin9/HCJ-Nomad-CalculatorClone',
     id: 3,
   },
   {
@@ -56,9 +57,9 @@ export const arrayOfProject = [
           'https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white', 
           'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'],
     link: 'https://google.com',
-    github: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
+    readme: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
     id: 4,
-  }
+  },
 ];
 
 export const arrayOfTimeLine = [
