@@ -95,6 +95,13 @@ export const CarouselItemTitle = styled.h4`
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 24px;
+
+    /* 
+    & a[href^=tel] {
+      color: inherit;
+      text-decoration: none;
+    }
+    */
   }
 `
 export const CarouselItemImg = styled.svg`

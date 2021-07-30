@@ -62,7 +62,7 @@ export const arrayOfProject = [
 ];
 
 export const arrayOfTimeLine = [
-  { year: '2013', text: 'Majored in Mathematics Education, Inha Univ, Korea', },
+  { year: '2014', text: 'Majored in Mathematics Education, Inha Univ, Korea', },
   { year: '2018', text: 'Exchange student in Oldenburg Univ, Germany', },
   { year: '2019', text: 'First started programming with Python', },
   { year: '2020', text: 'Completed coding bootcamp at Hoseo training college, Korea', },
