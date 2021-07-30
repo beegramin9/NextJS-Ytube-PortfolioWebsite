@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
   position: fixed;
-  z-index: 1000;
+  z-index: 10;
   width: 100%;
   height: 5rem;
   display: grid;

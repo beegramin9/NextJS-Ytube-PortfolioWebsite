@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect }  from 'react';
 
-import { ProjectsCarouselContainer, ProjectsCarouselItem, 
+import { ProjectsCarouselContainer, CardSection, ProjectsCarouselItem, 
   CarouselButton, CarouselButtonDot, CarouselButtons,  
   CarouselMobileScrollNode } from './ProjectsCarouselStyle';
 
@@ -72,37 +72,41 @@ const Projects = () => {
     <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll}>
       <>
         {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
-          <CarouselMobileScrollNode
-          key={index}
-          final={index === TOTAL_PROJECT_CAROUSEL_COUNT - 1}>
-            <ProjectsCarouselItem
-                  index={index}
-                  id={`carousel__item-${index}`}
-                  active={activeItem}
-                  onClick={(e) => handleClick(e, index)}>
-              <BlogCard key={id}> {/* 카드하나, Carousel 한개 */}
-                <div style={{overflow:'hidden'}}>
-                  <Img src={image} />
-                </div>
-                <TitleContent>
-                  <HeaderThree title>{title}</HeaderThree>
-                  <Hr />
-                  <div>
-                    <TagImgList>
-                      {tags.map((tag, index) => (
-                        <TagImg key={index} src={tag}></TagImg>
-                      ))}
-                    </TagImgList>
+
+          <CardSection>
+            <CarouselMobileScrollNode
+            key={index}
+            final={index === TOTAL_PROJECT_CAROUSEL_COUNT - 1}>
+              <ProjectsCarouselItem
+                    index={index}
+                    id={`carousel__item-${index}`}
+                    active={activeItem}
+                    onClick={(e) => handleClick(e, index)}>
+                <BlogCard key={id}> {/* 카드하나, Carousel 한개 */}
+                  <div style={{overflow:'hidden'}}>
+                    <Img src={image} />
                   </div>
-                  <CardInfo>{'\u00A0'}{description}</CardInfo>
-                </TitleContent>
-                <UtilityList>
-                  <ExternalLinks href={link}>Link</ExternalLinks>
-                  <ExternalLinks href={readme}>Readme</ExternalLinks>
-                </UtilityList>
-              </BlogCard>
-            </ProjectsCarouselItem>            
-          </CarouselMobileScrollNode>           
+                  <TitleContent>
+                    <HeaderThree title>{title}</HeaderThree>
+                    <Hr />
+                    <div>
+                      <TagImgList>
+                        {tags.map((tag, index) => (
+                          <TagImg key={index} src={tag}></TagImg>
+                        ))}
+                      </TagImgList>
+                    </div>
+                    <CardInfo>{'\u00A0'}{description}</CardInfo>
+                  </TitleContent>
+                </BlogCard>
+              </ProjectsCarouselItem>            
+            </CarouselMobileScrollNode>
+            {/* 링크 클릭이 안되서 바깥으로 뺄 수 밖에 없었음 */}
+            <UtilityList>
+              <ExternalLinks href={link}>Link</ExternalLinks>
+              <ExternalLinks href={readme}>Readme</ExternalLinks>
+            </UtilityList>
+          </CardSection>
         ))}
       </>
     </ProjectsCarouselContainer>

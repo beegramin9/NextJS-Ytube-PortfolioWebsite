@@ -34,6 +34,10 @@ export const ProjectsCarouselContainer = styled.ul`
     justify-content: initial;
 } 
 */
+export const CardSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const CarouselMobileScrollNode = styled.div`
   /* 건드는거 아님  */

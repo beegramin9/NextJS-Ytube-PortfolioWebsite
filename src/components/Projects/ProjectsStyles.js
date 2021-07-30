@@ -20,6 +20,7 @@ export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
+  padding: 0 0 1rem;
 `;
 
 /* @media ${(props) => props.theme.breakpoints.sm} {
@@ -94,21 +95,23 @@ export const CardInfo = styled.p`
 export const UtilityList = styled.ul`
   list-style-type: none;
   display: flex;
-  justify-content: space-around;
-  margin: 1rem 0 1.5rem 0;
-  padding: 1rem 0 1.5rem 0;
+  justify-content: space-evenly;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0 0 1.5rem 0;
 `;
 
 export const ExternalLinks = styled.a`
-color:#d4c0c0;
-font-size: 1.6rem;
-padding:1rem 1.5rem;
-background: ${(props) => props.theme.colors.redbrown};
-border-radius: 15px;
-transition: 0.5s;
-&:hover{
-  background: ${(props) => props.theme.colors.red};
-}
+  position: relative;
+  z-index: 5;
+  color:#d4c0c0;
+  font-size: 1.6rem;
+  padding:1rem 1.5rem;
+  background: ${(props) => props.theme.colors.redbrown};
+  border-radius: 15px;
+  transition: 0.5s;
+  &:hover{
+    background: ${(props) => props.theme.colors.red};
+  }
 `;
 
 export const TagImgList = styled.ul`
