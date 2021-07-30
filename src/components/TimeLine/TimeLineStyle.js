@@ -81,6 +81,10 @@ export const CarouselItemTitle = styled.h4`
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
+  
+  //! 요게 Ios에서는 숫자일땐 안먹네..참 이상하네그리
+  //! 내가 할수있는게 없음. mdn에서 background-clip은 safari on ios에서 안먹는다 그럼
+  
   // background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
