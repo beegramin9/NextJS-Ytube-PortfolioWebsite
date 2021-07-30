@@ -81,26 +81,31 @@ export const CarouselItemTitle = styled.h4`
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
-  background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  // background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 8px;
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 4px;
+    // background: red;
+    // color: red;
   }
   
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 24px;
-    
+    // background: red;
+    // color: red;
+    // color: rgba(255, 255, 255, 0.75);
     /* IOS 모바일 device 에러 */
-    a[href^=tel] {
-      color: inherit;
-      text-decoration: none;
-    }
+    // a[href^=tel] {
+    //   color: inherit;
+    //   text-decoration: none;
+    // }
   }
 `
 export const CarouselItemImg = styled.svg`
