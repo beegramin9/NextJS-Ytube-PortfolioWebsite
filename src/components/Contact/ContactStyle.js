@@ -33,7 +33,7 @@ export const Input = styled.input`
     padding: 0 0 0 4px;
     border-radius: 5px;
 
-    border: 1px solid rgb(70, 65, 61);
+    border: 1px solid rgba(70, 65, 61, .3);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.15),
     0 8px 16px -8px rgba(0, 0, 0, 0.15), 0 -6px 16px -6px rgba(0, 0, 0, 0.015);
 
@@ -47,7 +47,7 @@ export const TextArea = styled.textarea`
     padding: 0 0 0 4px;
 
     border-radius: 5px;
-    border: 1px solid rgb(70, 65, 61);
+    border: 1px solid rgba(70, 65, 61, .3);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.15),
     0 8px 16px -8px rgba(0, 0, 0, 0.15), 0 -6px 16px -6px rgba(0, 0, 0, 0.015);
     &:active,
