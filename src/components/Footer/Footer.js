@@ -11,9 +11,9 @@ const Footer = () => {
         <LinkColumn>Call
           <LinkItem href="tel:+82)10-7753-8276">+82)10-7753-8276</LinkItem>
         </LinkColumn>
-        <LinkColumn>Email
+        {/* <LinkColumn>Email
           <LinkItem href="mailto:wontae.choi@inha.edu">mailto:wontae.choi@inha.edu</LinkItem>
-        </LinkColumn>
+        </LinkColumn> */}
       </LinkList>
 
       <SocialIconsContainer>
