@@ -27,12 +27,17 @@ function NavDropDown() {
             </li>
             <li>
               <Link href="#tech">
-                <NavLink>Technologies</NavLink>
+                <NavLink>Techs</NavLink>
               </Link>
             </li> 
             <li>
               <Link href="#about">
                 <NavLink>About</NavLink>
+              </Link>
+            </li>
+            <li>
+              <Link href="#contact">
+                <NavLink>Contact</NavLink>
               </Link>
             </li>
           </Div2>

@@ -59,7 +59,7 @@ export const RightNav = styled.div`
 export const Div2 = styled.div`
   flex: 7;
   display: flex;
-  gap: 0.25rem;
+  gap: 0.5rem;
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column;
@@ -93,6 +93,10 @@ export const NavLink = styled.a`
     opacity: 1;
     cursor: pointer;
   }
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 1.8rem;
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
     font-size: 1.5rem;
