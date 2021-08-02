@@ -42,14 +42,32 @@ export const CardSection = styled.div`
 export const CarouselMobileScrollNode = styled.div`
   /* 건드는거 아님  */
   display: flex;
+  // scroll을 하기 전 버튼이었을 땐 index가 제대로 들어갔는데
+  // scroll을 하면 index가 제대로 먹히지 않는다
   min-width: ${({ final }) => final ? `100%;` : `410px`};
+  
+  
+`
+
+  
+  // props.final ? `120%;` : `410px`};
 
   /* 이걸 없애서 sm이나 최대일때나 scrollWidth가 같아졌어! */
-`
 
   /* @media ${props => props.theme.breakpoints.sm} {
     min-width: ${({ final }) => final ? `120%;` : `min-content`};
   } */
+
+
+// min-width: ${(props) => {}
+//   if (props.first) {
+//     return '380px'
+//   }else if (props.final) {
+//     return `120%`
+//   } else {
+//     return `410px`
+//   }
+// }};
 
 export const ProjectsCarouselItem = styled.div`
     border-radius: 3px;

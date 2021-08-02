@@ -75,7 +75,7 @@ const Projects = () => {
 
   // ver1. 클릭하지 않고 떠다닐때만, 사실 best 사용자 경험은 아니다.
   // touch때처럼 클릭하고 뗄 때만 할 수 있도록 하고싶었지만 그러면 mouse에서는 선택이 된다. 결국 이게 best 경험이었던 것
-  const handleMouseMove = (e) => {
+  // const handleMouseMove = (e) => {
     /* X: 맨 왼쪽부터 0부터 시작, Y: 맨 위쪽부터 0으로 시작, 아래로 내려올수록 증가
     1. client: 현재 보이는 전체 스크린 기준
     2. offset: 이벤트 대상의 전체 면적 기준, canvas가 아니면 따로 offset이 나오진 않는듯
@@ -91,22 +91,22 @@ const Projects = () => {
     // const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
     // console.log(index);
     // console.log(e.nativeEvent.offsetX);
-    let scrollToX = e.pageX;
-    console.log(scrollToX);
+  //   let scrollToX = e.pageX;
+  //   console.log(scrollToX);
     // if (300 > scrollToX > 150) {
     //   scrollToX -= 30
     // // } else if ( 220 > scrollToX > 150) {
     // //   scrollToX -= 50
     // }
-    // scrollToX = scrollToX < 220 ? scrollToX - 50 : scrollToX
-    
+    // scrollToX = scrollToX > 150 ? scrollToX - 100 : scrollToX
+    // scrollToX *= 1.1
     // e.clientX > 150 ? e.clientX : e.clientX - 50
-    scroll(carouselRef.current, scrollToX) // 맨 첫장 안넘어가는거 조정! 잘했다!
+  //  scroll(carouselRef.current, scrollToX) // 맨 첫장 안넘어가는거 조정! 잘했다!
      // 요건 맞았음. 작동함!
-  }
+  // }
   
 
-
+  // 이런 주먹구구식보다 결국은 touch처럼 하는게 맞는지도 몰라...
   return (
   <Section id="projects">
     <SectionDivider />
@@ -119,13 +119,15 @@ const Projects = () => {
     {/* <GridContainer>  */}
 
     {/* CarouselContainer가 GridContainer처럼 색깔, 크기가 정해지지 않은 거야 */}
-    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll} onMouseMove={handleMouseMove} /* onMouseUp={handleMouseUp} */>
+    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll} /* onMouseMove={handleMouseMove} */ /* onMouseUp={handleMouseUp} */>
       <>
         {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
 
           <CardSection>
             <CarouselMobileScrollNode
             key={index}
+            first={index === 0}
+            second={index === 1}
             final={index === TOTAL_PROJECT_CAROUSEL_COUNT - 1}>
               <ProjectsCarouselItem
                     index={index}
