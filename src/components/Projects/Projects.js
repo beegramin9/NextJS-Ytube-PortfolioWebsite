@@ -54,7 +54,8 @@ const Projects = () => {
   //   isClicked = false;
   //   console.log('up',isClicked);
   // }
-
+  
+  // 터치 전용 
   const handleScroll = (e) => {
     if (carouselRef.current) {
       const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
@@ -80,19 +81,25 @@ const Projects = () => {
     2. offset: 이벤트 대상의 전체 면적 기준, canvas가 아니면 따로 offset이 나오진 않는듯
     3. page: 전체 문서 기준(스크롤에 가려진 애들도 전부 포함), 즉 pageY는 문서 전체 길이
     4. screen: 모니터 화면 전체를 기준, 보통은 client와 같으나 듀얼모니터, 분할이면 달라짐*/
-    // console.log('e.pageX:',e.pageX);
-    console.log('e.nativeEvent.offsetX:',e.nativeEvent.offsetX);
+    // console.log('event:',e);
+    // console.log('e.nativeEvent.offsetX:',e.nativeEvent.offsetX);, 이건 개별 카드부터 시작해서 다시 0으로 초기화되기떄문에 안됨...
       // 클릭했을 때에만 작동하도록 해야함
       // 반대방향...?
       // if (isClicked) {}
       // 첫장에서 둘째장 넘어갈때 너무 일찍 넘어간다
       // 
-    let scrollToX = e.nativeEvent.offsetX;
+    // const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
+    // console.log(index);
+    // console.log(e.nativeEvent.offsetX);
+    let scrollToX = e.pageX;
+    console.log(scrollToX);
     // if (300 > scrollToX > 150) {
     //   scrollToX -= 30
     // // } else if ( 220 > scrollToX > 150) {
     // //   scrollToX -= 50
     // }
+    // scrollToX = scrollToX < 220 ? scrollToX - 50 : scrollToX
+    
     // e.clientX > 150 ? e.clientX : e.clientX - 50
     scroll(carouselRef.current, scrollToX) // 맨 첫장 안넘어가는거 조정! 잘했다!
      // 요건 맞았음. 작동함!
