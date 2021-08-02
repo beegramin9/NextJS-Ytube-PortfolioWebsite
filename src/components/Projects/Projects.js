@@ -80,11 +80,13 @@ const Projects = () => {
      2. offset: 이벤트 대상의 전체 면적 기준, canvas가 아니면 따로 offset이 나오진 않는듯
      3. page: 전체 문서 기준(스크롤에 가려진 애들도 전부 포함), 즉 pageY는 문서 전체 길이
      4. screen: 모니터 화면 전체를 기준, 보통은 client와 같으나 듀얼모니터, 분할이면 달라짐*/
-     // console.log('carouselRef.current:',carouselRef.current);
+
+     console.log('e.clientX:',e.clientX);
      // 클릭했을 때에만 작동하도록 해야함
      // 반대방향...?
      // if (isClicked) {}
-      scroll(carouselRef.current, e.clientX);
+      
+      scroll(carouselRef.current, e.clientX > 150 ? e.clientX : e.clientX - 50) // 맨 첫장 안넘어가는거 조정! 잘했다!
      // 요건 맞았음. 작동함!
    }
   
