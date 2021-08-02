@@ -1,8 +1,9 @@
 import React, {useState}  from 'react'
 import Link from 'next/link';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { StyledBurger, RightNav, Div2, Div3, NavLink, SocialIcons } from './NavDropDownStyle';
 
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { FaBlogger } from 'react-icons/fa';
 
 function NavDropDown() {
     const [ open, setOpen ] = useState(false);
@@ -50,6 +51,9 @@ function NavDropDown() {
             </SocialIcons>
             <SocialIcons href="https://instagram.com">
               <AiFillInstagram size="3rem"/>
+            </SocialIcons>
+            <SocialIcons href="https://google.com">
+              <FaBlogger size="3rem"/>
             </SocialIcons>
           </Div3>
         </RightNav>

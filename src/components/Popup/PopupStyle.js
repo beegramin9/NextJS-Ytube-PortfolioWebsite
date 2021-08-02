@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
+// delay 주고해야함
+
 export const PopupContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: .5em;
 
     position: fixed;
+    z-index: 40;
     margin: 2rem 0 0;
     right: 0;
     background: rgba(0, 138, 32, 0.3);

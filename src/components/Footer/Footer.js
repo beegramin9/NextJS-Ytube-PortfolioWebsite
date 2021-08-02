@@ -1,8 +1,10 @@
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
 import { SocialIcons } from '../Header/NavDropDownStyle';
 import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { FaBlogger } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -29,6 +31,9 @@ const Footer = () => {
         </SocialIcons>
         <SocialIcons href="https://instagram.com" style={{color:'rgb(135, 209, 242)'}}>
           <AiFillInstagram size="3rem"/>
+        </SocialIcons>
+        <SocialIcons href="https://google.com" style={{color:'rgb(135, 209, 242)'}}>
+          <FaBlogger size="3rem"/>
         </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

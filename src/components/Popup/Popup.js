@@ -7,19 +7,19 @@ import { FaBlogger, FaWindowClose } from 'react-icons/fa';
 
 function Popup(props) {
     // const [selectedPin, setSelectedPin] = useState(true);
+    // 5초있다가...? useState를 쓴다면 https://youtu.be/i8fAO_zyFAM, 12:47초
 
-
-    return (props.trigger) ? (
+    return (props.isOpen) ? (
         <PopupContainer>
             <PopupTitle>
                 I have a dev blog, too!
-                <FaWindowClose size="1em"/>
+                <FaWindowClose size="1em" onClick={() => props.setIsOpen(false)}/>
             </PopupTitle>
             <PopupText>
                 <span style={{position:'relative', top: 3}}>Check it out</span>
                 <span>{'\u00A0'}👉</span>
                 <PopupIcons>
-                    <SocialIcons href="https://github.com">
+                    <SocialIcons href="https://google.com">
                         <FaBlogger size="1.5em"/>
                     </SocialIcons>
                 </PopupIcons>

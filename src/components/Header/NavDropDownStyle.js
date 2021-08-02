@@ -59,6 +59,7 @@ export const RightNav = styled.div`
 export const Div2 = styled.div`
   flex: 7;
   display: flex;
+  margin: 0 0 0 .5rem;
   gap: 0.5rem;
   justify-content: space-around;
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -76,8 +77,11 @@ export const Div3 = styled.div`
   align-items: center;
   padding-right: 1rem;
   @media ${(props) => props.theme.breakpoints.sm} {
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-start;
+    align-content: center;
+
   }
 
 `;

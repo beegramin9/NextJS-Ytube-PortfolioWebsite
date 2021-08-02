@@ -10,10 +10,10 @@ import Popup from '../components/Popup/Popup';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
-// import React, {useState} from 'react'
+import React, {useState} from 'react'
 
 const Home = () => {
-  // const [openPopup, setOpenPopup] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   // 5초있다가 어떻게...? framer의 delay?
 
@@ -26,7 +26,7 @@ const Home = () => {
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
-          <Popup trigger={true}/>
+          <Popup isOpen={isOpen} setIsOpen={setIsOpen}/>
         </Section>
         <Projects />
         <Technologies/>
