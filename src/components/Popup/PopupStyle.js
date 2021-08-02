@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 // delay 주고해야함
 
-export const PopupContainer = styled(motion.div)`
+export const PopupContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: .5em;
