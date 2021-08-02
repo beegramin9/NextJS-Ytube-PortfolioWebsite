@@ -44,6 +44,15 @@ export const CarouselMobileScrollNode = styled.div`
   min-width: ${({ final }) => final ? `100%;` : `410px`};
   /* 이걸 없애서 sm이나 최대일때나 scrollWidth가 같아졌어! */
 `
+// min-width: ${(props) => {}
+//   if (props.first) {
+//     return '380px'
+//   }else if (props.final) {
+//     return `120%`
+//   } else {
+//     return `410px`
+//   }
+// }};
 
   /* @media ${props => props.theme.breakpoints.sm} {
     min-width: ${({ final }) => final ? `120%;` : `min-content`};
