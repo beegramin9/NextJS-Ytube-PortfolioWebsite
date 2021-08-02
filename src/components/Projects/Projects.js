@@ -74,21 +74,29 @@ const Projects = () => {
 
   // ver1. 클릭하지 않고 떠다닐때만, 사실 best 사용자 경험은 아니다.
   // touch때처럼 클릭하고 뗄 때만 할 수 있도록 하고싶었지만 그러면 mouse에서는 선택이 된다. 결국 이게 best 경험이었던 것
-   const handleMouseMove = (e) => {
-     /* X: 맨 왼쪽부터 0부터 시작, Y: 맨 위쪽부터 0으로 시작, 아래로 내려올수록 증가
-     1. client: 현재 보이는 전체 스크린 기준
-     2. offset: 이벤트 대상의 전체 면적 기준, canvas가 아니면 따로 offset이 나오진 않는듯
-     3. page: 전체 문서 기준(스크롤에 가려진 애들도 전부 포함), 즉 pageY는 문서 전체 길이
-     4. screen: 모니터 화면 전체를 기준, 보통은 client와 같으나 듀얼모니터, 분할이면 달라짐*/
-
-     console.log('e.clientX:',e.clientX);
-     // 클릭했을 때에만 작동하도록 해야함
-     // 반대방향...?
-     // if (isClicked) {}
-      
-      scroll(carouselRef.current, e.clientX > 150 ? e.clientX : e.clientX - 50) // 맨 첫장 안넘어가는거 조정! 잘했다!
+  const handleMouseMove = (e) => {
+    /* X: 맨 왼쪽부터 0부터 시작, Y: 맨 위쪽부터 0으로 시작, 아래로 내려올수록 증가
+    1. client: 현재 보이는 전체 스크린 기준
+    2. offset: 이벤트 대상의 전체 면적 기준, canvas가 아니면 따로 offset이 나오진 않는듯
+    3. page: 전체 문서 기준(스크롤에 가려진 애들도 전부 포함), 즉 pageY는 문서 전체 길이
+    4. screen: 모니터 화면 전체를 기준, 보통은 client와 같으나 듀얼모니터, 분할이면 달라짐*/
+    // console.log('e.pageX:',e.pageX);
+    console.log('e.nativeEvent.offsetX:',e.nativeEvent.offsetX);
+      // 클릭했을 때에만 작동하도록 해야함
+      // 반대방향...?
+      // if (isClicked) {}
+      // 첫장에서 둘째장 넘어갈때 너무 일찍 넘어간다
+      // 
+    let scrollToX = e.nativeEvent.offsetX;
+    // if (300 > scrollToX > 150) {
+    //   scrollToX -= 30
+    // // } else if ( 220 > scrollToX > 150) {
+    // //   scrollToX -= 50
+    // }
+    // e.clientX > 150 ? e.clientX : e.clientX - 50
+    scroll(carouselRef.current, scrollToX) // 맨 첫장 안넘어가는거 조정! 잘했다!
      // 요건 맞았음. 작동함!
-   }
+  }
   
 
 
