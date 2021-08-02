@@ -26,7 +26,7 @@ const Home = () => {
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
-          <Popup trigger={openPopup}/>
+          <Popup trigger={true}/>
         </Section>
         <Projects />
         <Technologies/>
