@@ -10,7 +10,10 @@ function Popup(props) {
     // 5초있다가...? useState를 쓴다면 https://youtu.be/i8fAO_zyFAM, 12:47초
 
     return (props.isOpen) ? (
-        <PopupContainer>
+        <PopupContainer
+        initial={{ x: '100vw' }}
+        animate={{ x: 0 }}
+        transition={{ type: 'spring', stiffness: 120 }}>
             <PopupTitle>
                 I have a dev blog, too!
                 <FaWindowClose size="1em" onClick={() => props.setIsOpen(false)}/>

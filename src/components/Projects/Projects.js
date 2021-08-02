@@ -22,7 +22,7 @@ const Projects = () => {
   const handleClick = (e, i) => {
     e.preventDefault();
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * (i / TOTAL_PROJECT_CAROUSEL_COUNT) *.8);
+      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * (i / TOTAL_PROJECT_CAROUSEL_COUNT) * .8);
       //!* 변수이다. Javascript scroll의 속성이 아니다.
       //!* 이 값은 카드 한장 410px보다 살짝 10px정도 큰 놈이어야 한다.
       //! 왼쪽에서부터 scroll된 scrollLeft의 양, 즉 각 카드의 가로위치를 나타낸다고 보면 된다.
@@ -42,7 +42,7 @@ const Projects = () => {
       //! 마지막엔 한개밖에 없는데 그래도 채우긴 채워야되니까 1040으로 된것
       //! 1640 + 1040이 나와서 2680이 되는 것이다.
       //todo 이 비율에 따라서 불이 다 들어오거나 작아지는데, 이걸 숫자로 조절하려니까 안되는겨...
-
+      console.log(carouselRef.current.scrollWidth)
       setActiveItem(index);
     }
   }
