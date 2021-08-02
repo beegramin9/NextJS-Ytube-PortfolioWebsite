@@ -6,10 +6,17 @@ import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import Contact from '../components/Contact/Contact';
+import Popup from '../components/Popup/Popup';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
+// import React, {useState} from 'react'
+
 const Home = () => {
+  // const [openPopup, setOpenPopup] = useState(false);
+
+  // 5초있다가 어떻게...? framer의 delay?
+
   //todo 반응형, Section grid 수정 필요
   //todo Portrait Component 필요
   //todo Hero, BgAnimation 겹치게 해야 함
@@ -19,6 +26,7 @@ const Home = () => {
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
+          <Popup trigger={openPopup}/>
         </Section>
         <Projects />
         <Technologies/>

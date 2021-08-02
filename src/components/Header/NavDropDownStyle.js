@@ -110,7 +110,7 @@ export const SocialIcons = styled.a`
   color: ${props => props.theme.colors.pastelwhite};
   border-radius: 50px;
   padding: 8px;
-&:hover {
+  &:hover {
     background-color: ${props => props.theme.colors.darkpurple};
     transform: scale(1.1);
     cursor: pointer;

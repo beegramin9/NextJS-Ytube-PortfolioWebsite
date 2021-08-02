@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
+import Button from '../../styles/GlobalComponents/Button';
 
 const Hero = (props) => (
   <Section grid nopadding>
