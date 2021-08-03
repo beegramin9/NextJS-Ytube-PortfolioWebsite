@@ -96,7 +96,9 @@ const Projects = () => {
                         ))}
                       </TagImgList>
                     </div>
-                    <CardInfo>{'\u00A0'}{description}</CardInfo>
+                    <CardInfo>{'\u00A0'}{description.split('\n').map( line => {
+                      return (<span>{line}<br/>&nbsp;</span>)
+                    })}</CardInfo>
                   </TitleContent>
                 </BlogCard>
               </ProjectsCarouselItem>            
