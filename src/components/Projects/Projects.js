@@ -56,6 +56,19 @@ const Projects = () => {
     window.addEventListener('resize', handleResize);
   }, []);
 
+  //! TouchEvent에서 힌트를 얻어보자!
+  const handleTouchStart = (e) => {
+    console.log('handleTouchStart:',e);
+  };
+  const handleTouchMove = (e) => {
+    console.log('handleTouchMove:',e);
+  };
+  const handleTouchEnd = (e) => {
+    console.log('handleTouchEnd:',e);
+  };
+
+
+
 
   return (
   <Section id="projects">
@@ -69,7 +82,7 @@ const Projects = () => {
     {/* <GridContainer>  */}
 
     {/* CarouselContainer가 GridContainer처럼 색깔, 크기가 정해지지 않은 거야 */}
-    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll}>
+    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <>
         {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
 
