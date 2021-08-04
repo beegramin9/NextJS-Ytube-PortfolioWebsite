@@ -84,7 +84,15 @@ const Projects = () => {
      // 클릭했을 때에만 작동하도록 해야함
      // 반대방향...?
      // if (isClicked) {}
-      scroll(carouselRef.current, e.clientX);
+      const totalScreenWidth = document.querySelector('body').offsetWidth ;
+      const totalProjectSectionWidth = document.querySelector('#projects').offsetWidth;
+      //! 양쪽 padding 48px,총 96px이 제외되어 있음!
+      const marginOnLeftSide = (totalScreenWidth-totalProjectSectionWidth)/2
+      console.log(totalScreenWidth, totalProjectSectionWidth);
+      console.log(e.clientX, marginOnLeftSide, e.clientX-marginOnLeftSide-48);
+      //* 100은 임의로, 너무 빨리 넘어감!
+      const toLeft = e.clientX < 700 ?  e.clientX-marginOnLeftSide - 48 - 100 :  e.clientX-marginOnLeftSide - 48
+      scroll(carouselRef.current, toLeft);
      // 요건 맞았음. 작동함!
    }
   

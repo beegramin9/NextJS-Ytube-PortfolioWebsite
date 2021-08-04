@@ -42,7 +42,7 @@ export const CardSection = styled.div`
 export const CarouselMobileScrollNode = styled.div`
   /* 건드는거 아님  */
   display: flex;
-  min-width: ${({ final }) => final ? `100%;` : `410px`};
+  min-width: ${({ final }) => final ? `120%;` : `410px`};
 
   /* 이걸 없애서 sm이나 최대일때나 scrollWidth가 같아졌어! */
 `
