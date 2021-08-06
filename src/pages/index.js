@@ -6,19 +6,19 @@ import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import Contact from '../components/Contact/Contact';
-import Popup from '../components/Popup/Popup';
+// import Popup from '../components/Popup/Popup';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 import React, {useState, useEffect} from 'react'
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  useEffect( () => {
-    setTimeout( () => {
-      setIsOpen(true);
-    }, 3000);
-  }, [])
+  // const [isOpen, setIsOpen] = useState(false);
+  // useEffect( () => {
+  //   setTimeout( () => {
+  //     setIsOpen(true);
+  //   }, 3000);
+  // }, [])
   // 5초있다가 어떻게...? framer의 delay?
 
   //todo 반응형, Section grid 수정 필요
@@ -30,7 +30,7 @@ const Home = () => {
           <Hero/>
           {/* <BgAnimation/> */}
           <Portrait/> 
-          <Popup isOpen={isOpen} setIsOpen={setIsOpen}/>
+          {/* <Popup isOpen={isOpen} setIsOpen={setIsOpen}/> */}
         </Section>
         <Projects />
         <Technologies/>
