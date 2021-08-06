@@ -18,9 +18,12 @@ function Blog() {
             <BlogContainer>
                 {/* Framer Motion으로 하기 */}
                 <img src="./images/Blog.png"/>
-                <a href="https://www.google.com">
-                    <Button>Check out my blog</Button>
-                </a>
+                <Button>
+                    <a href="/resume/Resume.pdf" download="resume-WontaeChoi.pdf"
+                        style={{ color: '#fff'}}>
+                        Check out my blog
+                    </a>
+                </Button>
             </BlogContainer>
         </Section>
     )

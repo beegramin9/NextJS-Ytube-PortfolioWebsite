@@ -16,9 +16,12 @@ const Hero = (props) => (
       technologies, also knowledgeable in software applications, algorithms,
       development techniques, and data structures.
       </SectionText>
-      <a href="/resume/Resume.pdf" download="resume-WontaeChoi.pdf">
-        <Button>Download Resume</Button>
-      </a>
+        <Button>
+          <a href="/resume/Resume.pdf" download="resume-WontaeChoi.pdf"
+            style={{ color: '#fff'}}>
+              Download Resume
+          </a>
+        </Button>
     </LeftSection>
   </Section>
 );
