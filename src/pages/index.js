@@ -1,15 +1,16 @@
-import Acomplishments from '../components/Acomplishments/Acomplishments';
 import Hero from '../components/Hero/Hero';
-import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Portrait from '../components/Portrait/Portrait';
+import Blog from '../components/Blog/Blog';
 import Projects from '../components/Projects/Projects';
 import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
+import Acomplishments from '../components/Acomplishments/Acomplishments';
 import Contact from '../components/Contact/Contact';
 // import Popup from '../components/Popup/Popup';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
+// import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import React, {useState, useEffect} from 'react'
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
           <Portrait/> 
           {/* <Popup isOpen={isOpen} setIsOpen={setIsOpen}/> */}
         </Section>
+        <Blog />
         <Projects />
         <Technologies/>
         <Timeline />
