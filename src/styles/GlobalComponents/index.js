@@ -70,13 +70,13 @@ export const SectionText = styled.p`
     max-width: 670px;
     font-size: 20px;
     line-height: 32px;
-    padding-bottom: 24px;
+    padding-bottom: ${props => props.paddingBottom ? props.paddingBottom : '24px'};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 24px;
-    padding-bottom: 16px;
+    padding-bottom: ${props => props.paddingBottom ? props.paddingBottom : '16px'};
   }
 `
 

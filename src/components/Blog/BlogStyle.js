@@ -5,7 +5,6 @@ export const BlogContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3.6rem 0;
-
     img {
         //* max-width: SectionText 따라감
         max-width: 800px;
@@ -16,6 +15,5 @@ export const BlogContainer = styled.div`
             max-width: 670px;
         }
     }
-    
 `;
 

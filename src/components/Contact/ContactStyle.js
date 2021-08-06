@@ -23,7 +23,7 @@ export const EmailFormContainer = styled.div`
 export const EmailColumnList = styled.ul`
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 2.5rem;
 
     @media ${(props) => props.theme.breakpoints.md} {
         padding: 0;
@@ -47,7 +47,6 @@ export const Input = styled.input`
 
 export const TextArea = styled.textarea`
     padding: 0 0 0 4px;
-    margin-bottom: 2.1rem;
     border-radius: 5px;
     border: 1px solid rgba(70, 65, 61, .3);
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.15),
@@ -56,4 +55,9 @@ export const TextArea = styled.textarea`
     &:focus {
         outline: none;
     }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        margin-bottom: 1.1rem;
+    }
+
 `
