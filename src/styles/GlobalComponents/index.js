@@ -191,6 +191,17 @@ export const ButtonBack = styled.div`
   overflow: hidden;
   opacity: ${({ disabled }) => disabled ? '.5' : '1'};
 
+  /* 복사 막기 */
+  -webkit-user-select: none;
+  /* 텍스트/이미지 선택 불가 => 확대 불가 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 롱탭 파란색으로 하이라이트되는 것 막기 */
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -user-select: none;
+
+
   @media ${(props) => props.theme.breakpoints.md} {
     width: ${({ alt }) => alt ? '150px' : '184px'};
     height: ${({ alt }) => alt ? '52px' : '48px'};
@@ -226,6 +237,16 @@ export const ButtonFront = styled.button`
   justify-content: center;
   cursor: pointer;
   box-shadow: ${({ disabled }) => disabled ? 'inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3)' : 'none'};
+
+  /* 복사 막기 */
+  -webkit-user-select: none;
+  /* 텍스트/이미지 선택 불가 => 확대 불가 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 롱탭 파란색으로 하이라이트되는 것 막기 */
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -user-select: none;
 
   &:hover {
     opacity: 0;
