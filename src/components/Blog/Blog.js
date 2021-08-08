@@ -19,7 +19,7 @@ function Blog() {
                 {/* Framer Motion으로 하기 */}
                 <img src="./images/Blog.png"/>
                 <Button>
-                    <a href="/resume/Resume.pdf" download="resume-WontaeChoi.pdf"
+                    <a href="https://www.youtube.com/"
                         style={{ color: '#fff'}}>
                         Check out my blog
                     </a>

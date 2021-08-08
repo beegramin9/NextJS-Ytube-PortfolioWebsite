@@ -22,6 +22,11 @@ function NavDropDown() {
         <RightNav open={open}>
           <Div2>
             <li>
+              <Link href="#blog">
+                <NavLink>Blog</NavLink>
+              </Link>
+            </li>
+            <li>
               <Link href="#projects">
                 <NavLink>Projects</NavLink>
               </Link>

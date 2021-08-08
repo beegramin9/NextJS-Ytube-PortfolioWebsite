@@ -8,7 +8,7 @@ export const StyledBurger = styled.div`
     right: 20px;
     z-index: 20;
     display: none;
-    @media ${(props) => props.theme.breakpoints.sm} {
+    @media ${(props) => props.theme.breakpoints.md} {
         display: flex;
         justify-content: space-around;
         flex-flow: column nowrap;
@@ -37,8 +37,12 @@ export const RightNav = styled.div`
   /* 색을 바꿔야 함 */
   flex: 6;
   display: flex;
-  grid-area: 1 / 2 / 2 / 6;
-  @media ${(props) => props.theme.breakpoints.sm} {
+  grid-area: 1 / 3 / 2 / 6;
+  @media ${(props) => props.theme.breakpoints.lg} {
+    grid-area: 1 / 2 / 2 / 6;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
     grid-area: 1 / 2 / 2 / 4;
     flex-direction: column;
     justify-content: flex-start;
@@ -62,7 +66,7 @@ export const Div2 = styled.div`
   margin: 0 0 0 .5rem;
   gap: 0.5rem;
   justify-content: space-around;
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.md} {
     flex-direction: column;
     justify-content: flex-start;
   }
@@ -76,7 +80,7 @@ export const Div3 = styled.div`
   justify-content: space-around;
   align-items: center;
   padding-right: 1rem;
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.md} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: flex-start;
@@ -101,7 +105,7 @@ export const NavLink = styled.a`
     font-size: 1.8rem;
   }
 
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.md} {
     padding: 0.5rem;
     font-size: 1.5rem;
     

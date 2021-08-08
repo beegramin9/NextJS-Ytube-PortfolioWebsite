@@ -2,6 +2,17 @@
 //! Projects Component
 export const arrayOfProject = [
   {
+    title: 'Gatsby Dev Blog',
+    description: "I could not deny how much of a great help it has been from many other's dev Blogs. So I decided to make my own. \nThis blog is made with Gatsby and gets access to data through GraphQL. No, I did not just decide to use premaid-blog providing services like devDojo, I wanted make mine on my own! \nThe contents always see to be updated in real time, and you can always come over to check out 😊",
+    image: '/images/projects/Blog.gif',
+    tags: ['https://img.shields.io/badge/Gatsby-663399?style=flat-square&logo=Gatsby&logoColor=white',
+    'https://img.shields.io/badge/GraphQL-d90f80?style=flat-square&logo=GraphQL&logoColor=white', 
+    'https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white'],
+    link: 'https://www.google.com/',
+    readme: 'https://github.com/beegramin9/Gatsby-Skillthrive-Blog',
+    id: 0,
+  },
+  {
     title: 'Movie Archive Webapp',
     description: "This project works on a movie list api, added with custom responsive design.\nIt follows the conventional React folder structure which makes it scalable and sustainable.\nThere are many reusable features such as custom Axios&pagination Hook, styled components, routers and loading spinner.\nThe social media icons at the header and footer lead to my social accounts, and About page contains a prologue of this project.",
     image: '/images/projects/Movieapp.gif',
@@ -10,7 +21,7 @@ export const arrayOfProject = [
           'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white'],
     link: 'https://beegramin9.github.io/ReactJS-Nomad-MovieApp/#/',
     readme: 'https://github.com/beegramin9/ReactJS-Nomad-MovieApp',
-    id: 0,
+    id: 1,
   },
   {
     title: 'Paintbrush Clone',
@@ -22,18 +33,18 @@ export const arrayOfProject = [
     'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
     link: 'https://beegramin9.github.io/HCJ-Nomad-PaintBrushClone/',
     readme: 'https://github.com/beegramin9/HCJ-Nomad-PaintBrushClone',
-    id: 1,
+    id: 2,
   },
   {
     title: 'Pizza recipe app',
     description: "@TheNetNinja!\nIt occured to me somehow, that It would be awesome to let my alert & popup components a little animation and provide users a better experience.\nThen I found out Framer Motion React library and perfect crash course on Youtube🎞, TheNetNinja. \n And here it is!",
-    image: '/images/projects/React.gif',
+    image: '/images/projects/Pizza.gif',
     tags: ['https://img.shields.io/badge/Framer-df0eb1?style=flat-square&logo=Framer&logoColor=white',
           'https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white', 
           'https://img.shields.io/badge/StyledComponents-DB7093?style=flat-square&logo=Styled-Components&logoColor=white'],
-    link: 'https://google.com',
+    link: 'https://beegramin9.github.io/React-NetNinja-FramerMotion/',
     readme: 'https://github.com/beegramin9/React-NetNinja-FramerMotion',
-    id: 2,
+    id: 3,
   },
   {
     title: 'Momentum Clone',
@@ -45,8 +56,9 @@ export const arrayOfProject = [
           'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
     link: 'https://beegramin9.github.io/HCJ-Nomad-MomentumClone/',
     readme: 'https://github.com/beegramin9/HCJ-Nomad-MomentumClone',
-    id: 3,
+    id: 4,
   },
+  /* 
   {
     title: 'Calculator Clone',
     description: "The calculator functionality is pulled through by Javascript ES6 Class, which made easier to store and call the values and operator functions the separately.\nThe number blocks and button blocks are constructed within CSS3 grid, flex, which made easier to remain intact when the web moves responsively.",
@@ -57,8 +69,9 @@ export const arrayOfProject = [
     'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white'],
     link: 'https://beegramin9.github.io/HCJ-Nomad-CalculatorClone/',
     readme: 'https://github.com/beegramin9/HCJ-Nomad-CalculatorClone',
-    id: 4,
+    id: 0,
   },
+  */
 ];
 
 export const arrayOfTimeLine = [

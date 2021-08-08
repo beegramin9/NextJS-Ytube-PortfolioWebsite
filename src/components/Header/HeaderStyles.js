@@ -11,7 +11,6 @@ export const HeaderContainer = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 1rem;
   padding: 1rem 1rem 0rem;
-
   background: ${(props) => props.colorAlt ? 
     'linear-gradient(270deg, #F46737 0%, #945DD6 100%)' :
     'linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)'};
@@ -28,6 +27,7 @@ export const Span = styled.span`
 `;
 
 export const Div1 = styled.div`
+  flex: 1;
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   flex-direction: row;

@@ -5,7 +5,7 @@ export const Section = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex" };
   flex-direction: ${(props) => props.row ? "row" : "column" };
   justify-content: flex-start;
-  padding: ${(props) => props.nopadding ? "0" : "100px 48px 0 48px" } ;
+  padding: ${(props) => props.nopadding ? "0" : "100px 48px 0" } ;
   margin: 0 auto;
   width: 100%;
   max-width: 1040px;
