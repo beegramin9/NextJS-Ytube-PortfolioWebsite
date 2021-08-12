@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect }  from 'react';
+import React, { useState, useRef }  from 'react';
 
-import { ProjectsCarouselContainer, CardSection, ProjectsCarouselItem, 
+import { ProjectContainer, ProjectsCarouselContainer, CardSection, 
   CarouselButton, CarouselButtonDot, CarouselButtons,  
-  CarouselMobileScrollNode } from './ProjectsCarouselStyle';
-import { BlogCard, CardInfo, ExternalLinks, GridContainer,
+   } from './ProjectsCarouselStyle';
+import { BlogCard, CardInfo, ExternalLinks,
   HeaderThree, Hr, TagImg, TagImgList, TitleContent, UtilityList, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles/GlobalComponents';
 import { arrayOfProject } from '../../constants/constants';
@@ -13,68 +13,92 @@ const TOTAL_PROJECT_CAROUSEL_COUNT = arrayOfProject.length;
 const Projects = () => {
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
+  
+  //* Mouse Slider만을 위한 Logic
+  let isCursorDragging = false;
+  let previousStartMousePosition = 0; // 클릭했을 때의 마우스 첫 위치
+  let previouslyDraggedX = 0;
+  const cardWidth = 410;
 
-  const scroll = (node, left) => {
-    return node.scrollTo({left, behavior:'smooth'});
-  }
-
-  const handleClick = (e, i) => {
+  const handleDotClick = (e, index) => {
     e.preventDefault();
     if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * (i / TOTAL_PROJECT_CAROUSEL_COUNT) * .8);
+      const findCard = - (cardWidth * (index));
+      console.log('findCard:',findCard)
       //!* 변수이다. Javascript scroll의 속성이 아니다.
       //!* 이 값은 카드 한장 410px보다 살짝 10px정도 큰 놈이어야 한다.
       //! 왼쪽에서부터 scroll된 scrollLeft의 양, 즉 각 카드의 가로위치를 나타낸다고 보면 된다.
-      scroll(carouselRef.current, scrollLeft);
-    }
-  }
-
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / carouselRef.current.scrollWidth) * TOTAL_PROJECT_CAROUSEL_COUNT * 1.3) ;
-      //!* 요 총 값이 1이 되어야 한다? 그렇지! 그렇게해서 곱해주는 숫자를 만들어줘야하는거야
-
-      //! 5개일때: carouselRef.current.scrollLeft: 410px, 아마 카드 크기에 따라 가는듯
-      //! 얘는 min-content랑 똑같다. min-width: ${({ final }) => final ? `100%;` : `410px`};
-      //! 5개일때: carouselRef.current.scrollWidth: 전체크기, 2680px
-      //! 410* 4 = 1640, 전체 감싸는 섹션 최대가 1040px
-      //! 마지막엔 한개밖에 없는데 그래도 채우긴 채워야되니까 1040으로 된것
-      //! 1640 + 1040이 나와서 2680이 되는 것이다.
-      //todo 이 비율에 따라서 불이 다 들어오거나 작아지는데, 이걸 숫자로 조절하려니까 안되는겨...
-      console.log(carouselRef.current.scrollWidth)
+      carouselRef.current.style.transform = `translateX(${findCard}px)`;
       setActiveItem(index);
     }
   }
+  
+  const handleGestureDown = (e) => {
+    isCursorDragging = true;
+    previousStartMousePosition = e.pageX ;
 
-  // window가 resized 되면 현재 node에서 0번으로 되돌아감
-  // avoids a bug where content is covered up if coming from smaller screen
-  useEffect( () => {
-    const handleResize = () => {
-      scroll(carouselRef.current, 0)
+    previouslyDraggedX = window.getComputedStyle(carouselRef.current).getPropertyValue('transform');
+    previouslyDraggedX = previouslyDraggedX === 'none'
+                        ? 0
+                        : parseInt(previouslyDraggedX.split(',')[4].trim());
+  };
+
+  //! 카드의 시작점마다 멈추는 이유가 뭐야?
+  // 이것만 고치면 되는데!!!
+  const handleGestureMove = (e) => {
+    e.preventDefault();
+    if (isCursorDragging) {
+      const currentMousePosition = e.pageX ;
+      const howMuchXMovedRightNow = currentMousePosition - previousStartMousePosition;
+      const totalValueDraggedXFromStartLine = howMuchXMovedRightNow + previouslyDraggedX;
+      console.log('howMuchXMovedRightNow:',howMuchXMovedRightNow);
+      console.log('totalValueDraggedXFromStartLine:',totalValueDraggedXFromStartLine);
+      if (howMuchXMovedRightNow > 0) { 
+        // 왼쪽으로 넘어갈 때 양수
+        // 즉 왼쪽으로 넘어가면서 스타트라인의 왼쪽으로 가는 순간 return해서
+        // 1번 카드의 왼쪽으로 넘어가지 못하게 한다
+        if (totalValueDraggedXFromStartLine > 0) { // 
+          return;
+        }
+      // 2. 맨 오른쪽 Card를 넘어가지 못하게 하기
+      } else {
+        // 반대 경우, 즉 오른쪽으로 넘어가고 있을 때
+        // totalValueDraggedXFromStartLine 음수값이 된다.
+        // 여기서는 carouselRef.current의 전체 길이와 카드 한장 사이의 수적 비교가 필요하므로
+        // 절대값을 씌워 양수 >> 양수끼리 비교해줘야 한다
+        
+        /* 50은 임의조정 */
+        /* 로직에서 멈추는가? */
+        console.log('전체길이:',cardWidth * (TOTAL_PROJECT_CAROUSEL_COUNT-1) - 20);
+        if (Math.abs(totalValueDraggedXFromStartLine) > cardWidth * (TOTAL_PROJECT_CAROUSEL_COUNT-1) ) {
+          return;
+        }
+        // carouselRef.current 전체보다 오른쪽으로 갔을 때 return해서 멈춘다
+        // 그런데 마지막 카드의 넓이만큼 일찍 끝나야 하므로 빼준다totalValueDraggedXFromStartLine
+      }
+      carouselRef.current.style.cursor = 'pointer';
+      carouselRef.current.style.transform = `translateX(${totalValueDraggedXFromStartLine}px)`;
+      // round로 하니까 이렇게 되는거 아냐? floor 아님?
+      const index = Math.floor(( Math.abs(totalValueDraggedXFromStartLine) / (cardWidth) ) *1.1);
+      setActiveItem(index);
     }
-    window.addEventListener('resize', handleResize);
-  }, []);
-
-  const handleTouchStart = (e) => {
-    // console.log('handleTouchStart:',e);
   };
 
-  const handleTouchMove = (e) => {
-    const touchScrollVertical = (node, left) => {
-      return node.scrollTo({left, behavior:'smooth'});
+  const handleGestureUp = (e) => {
+    isCursorDragging = false;
+    carouselRef.current.style.cursor = 'default';
+  };
+
+  const handleScroll = (e) => {
+    console.log('hey');
+    if (carouselRef.current) {
+      console.log('scrollLeft',carouselRef.current.scrollLeft)
+      console.log('scrollWidth',carouselRef.current.scrollWidth)
+      const index = Math.floor(carouselRef.current.scrollLeft / cardWidth);
+      console.log('index',index)
+      setActiveItem(index);
     }
-
-    // 전체 길이, window...
-    const totalScreenHeight = document.querySelector('body').offsetHeight ; 
-    console.log(totalScreenHeight);
-
-    // console.log('handleTouchMove:',e);
   };
-
-  const handleTouchEnd = (e) => {
-    // console.log('handleTouchEnd:',e);
-  };
-
 
   return (
   <Section id="projects">
@@ -82,46 +106,34 @@ const Projects = () => {
     <SectionTitle main>Projects</SectionTitle>
     <SectionText>Some of the projects started from a simple designless Youtube tutorials for me to learn new techs and concepts. <br></br>
     But along the development, I thought of a few new features that would show my perspective, preferences and ideas.</SectionText>
-    {/* Introduce carousel */}
     
-    {/* 400px 크기가 1 or 2개가 들어오게 하는 것 */}
-    {/* <GridContainer>  */}
-
-    {/* CarouselContainer가 GridContainer처럼 색깔, 크기가 정해지지 않은 거야 */}
-    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-      <>
+    <ProjectContainer>
+      <ProjectsCarouselContainer 
+      ref={carouselRef}  
+      onMouseDown={handleGestureDown} 
+      onMouseMove={handleGestureMove} 
+      onMouseUp={handleGestureUp}
+      onScroll={handleScroll}
+      >
         {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
-
           <CardSection>
-            <CarouselMobileScrollNode
-            key={index}
-            final={index === TOTAL_PROJECT_CAROUSEL_COUNT - 1}>
-              <ProjectsCarouselItem
-                    index={index}
-                    id={`carousel__item-${index}`}
-                    active={activeItem}
-                    onClick={(e) => handleClick(e, index)}>
-                <BlogCard key={id}> {/* 카드하나, Carousel 한개 */}
-                  <div style={{overflow:'hidden'}}>
-                    <Img src={image} />
-                  </div>
-                  <TitleContent>
-                    <HeaderThree title>{title}</HeaderThree>
-                    <Hr />
-                    <div>
-                      <TagImgList>
-                        {tags.map((tag, index) => (
-                          <TagImg key={index} src={tag}></TagImg>
-                        ))}
-                      </TagImgList>
-                    </div>
-                    <CardInfo>{'\u00A0'}{description.split('\n').map( line => {
-                      return (<span>{line}<br/>&nbsp;</span>)
-                    })}</CardInfo>
-                  </TitleContent>
-                </BlogCard>
-              </ProjectsCarouselItem>            
-            </CarouselMobileScrollNode>
+            <BlogCard key={id}>
+              <div style={{overflow:'hidden'}}>
+                <Img src={image} />
+              </div>
+              <TitleContent>
+                <HeaderThree title>{title}</HeaderThree>
+                <Hr />
+                <TagImgList>
+                  {tags.map((tag, index) => (
+                    <TagImg key={index} src={tag}></TagImg>
+                  ))}
+                </TagImgList>
+                <CardInfo>{'\u00A0'}{description.split('\n').map( line => {
+                  return (<span>{line}<br/>&nbsp;</span>)
+                })}</CardInfo>
+              </TitleContent>
+            </BlogCard>
             {/* 링크 클릭이 안되서 바깥으로 뺄 수 밖에 없었음 */}
             <UtilityList>
               <ExternalLinks href={link}>Link</ExternalLinks>
@@ -129,9 +141,10 @@ const Projects = () => {
             </UtilityList>
           </CardSection>
         ))}
-      </>
-    </ProjectsCarouselContainer>
-    {/* </GridContainer> */}
+      </ProjectsCarouselContainer>
+    </ProjectContainer>
+
+
     <CarouselButtons>
       {/* 여기 index는 캐러질인덱스가 아니고 constant 인덱스 */}
       {arrayOfProject.map((item, index) => {
@@ -139,8 +152,8 @@ const Projects = () => {
           <CarouselButton
             key={index}
             index={index}
-            active={activeItem}
-            onClick={(e) => handleClick(e, index)}
+            active={activeItem} 
+            onClick={(e) => handleDotClick(e, index)}
             type="button">
             <CarouselButtonDot active={activeItem} />
           </CarouselButton>

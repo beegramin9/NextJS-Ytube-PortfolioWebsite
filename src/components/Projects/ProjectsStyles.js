@@ -1,30 +1,17 @@
 import styled from 'styled-components';
 
-
-/* export const GridContainer = styled.section`
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-padding: 3rem;
-place-items: center;
-column-gap: 2rem;
-row-gap: 3rem;
-@media ${(props) => props.theme.breakpoints.sm} {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  padding-bottom: 0;
-}
-` */
-
+//! 내가 모르는거 다 지우자
 export const BlogCard = styled.div`
-  border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
-  text-align: center;
+    align-content: start;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+    scroll-snap-align: start;
+    /* 시작점에 딱 맞춰 스크롤 끝나게 하는 것, 중요함!
+    시작, 끝이 정해져있는 대상에 넣어야함, 이 겨웅엔 카드 */
+    overflow: hidden;
 `;
 
-/* @media ${(props) => props.theme.breakpoints.sm} {
-  width: 100%;
-}  */
 export const Img = styled.img`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
