@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect }  from 'react';
 import { ProjectsCarouselContainer, CardSection, ProjectsCarouselItem, 
   CarouselButton, CarouselButtonDot, CarouselButtons,  
   CarouselMobileScrollNode } from './ProjectsCarouselStyle';
-
 import { BlogCard, CardInfo, ExternalLinks, GridContainer,
   HeaderThree, Hr, TagImg, TagImgList, TitleContent, UtilityList, Img } from './ProjectsStyles';
 import { Section, SectionDivider, SectionTitle, SectionText } from '../../styles/GlobalComponents';
@@ -56,6 +55,26 @@ const Projects = () => {
     window.addEventListener('resize', handleResize);
   }, []);
 
+  const handleTouchStart = (e) => {
+    // console.log('handleTouchStart:',e);
+  };
+
+  const handleTouchMove = (e) => {
+    const touchScrollVertical = (node, left) => {
+      return node.scrollTo({left, behavior:'smooth'});
+    }
+
+    // 전체 길이, window...
+    const totalScreenHeight = document.querySelector('body').offsetHeight ; 
+    console.log(totalScreenHeight);
+
+    // console.log('handleTouchMove:',e);
+  };
+
+  const handleTouchEnd = (e) => {
+    // console.log('handleTouchEnd:',e);
+  };
+
 
   return (
   <Section id="projects">
@@ -69,7 +88,7 @@ const Projects = () => {
     {/* <GridContainer>  */}
 
     {/* CarouselContainer가 GridContainer처럼 색깔, 크기가 정해지지 않은 거야 */}
-    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll}>
+    <ProjectsCarouselContainer ref={carouselRef} onScroll={handleScroll} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <>
         {arrayOfProject.map(({ id, title, description, image, tags, link, readme }, index) => (
 

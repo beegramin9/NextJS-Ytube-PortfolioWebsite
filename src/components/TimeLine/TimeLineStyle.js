@@ -33,7 +33,7 @@ export const TimelineCarouselContainer = styled.ul`
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    touch-action: pan-x;
+    touch-action: auto; /* 이걸 도대체 왜 막아놓은거야? ㅋㅋㅋㅋㅋ why pan-x? */
     justify-content: initial;
     margin-bottom: 8px;
   }
