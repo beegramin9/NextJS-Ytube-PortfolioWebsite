@@ -33,7 +33,11 @@ export const ProjectsCarouselContainer = styled.div`
       &::-webkit-scrollbar {
         display: none;
       }
+      min-width: ${({ final }) => final ? `180%;` : `410px`};
     }
+
+    /* 여기에 transition 넣는건가? */
+    transition: transform 1s cubic-bezier(0.42, 0, 0.18, 1.15)
 `
 
 export const CardSection = styled.div`

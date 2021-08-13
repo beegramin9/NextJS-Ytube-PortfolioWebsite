@@ -1,4 +1,4 @@
-import React, { useState, useRef }  from 'react';
+import React, { useState, useEffect, useRef }  from 'react';
 
 import { ProjectContainer, ProjectsCarouselContainer, CardSection, 
   CarouselButton, CarouselButtonDot, CarouselButtons,  
@@ -14,6 +14,13 @@ const Projects = () => {
   const [activeItem, setActiveItem] = useState(0);
   const carouselRef = useRef();
   
+  useEffect( () => {
+    const handleResize = () => {
+      scroll(carouselRef.current, 0)
+    }
+    window.addEventListener('resize', handleResize);
+  }, []);
+
   //* Mouse Slider만을 위한 Logic
   let isCursorDragging = false;
   let previousStartMousePosition = 0; // 클릭했을 때의 마우스 첫 위치
@@ -21,15 +28,21 @@ const Projects = () => {
   const cardWidth = 410;
 
   const handleDotClick = (e, index) => {
+    console.log(e.nativeEvent.pointerType)
     e.preventDefault();
     if (carouselRef.current) {
-      const findCard = - (cardWidth * (index));
-      console.log('findCard:',findCard)
-      //!* 변수이다. Javascript scroll의 속성이 아니다.
-      //!* 이 값은 카드 한장 410px보다 살짝 10px정도 큰 놈이어야 한다.
-      //! 왼쪽에서부터 scroll된 scrollLeft의 양, 즉 각 카드의 가로위치를 나타낸다고 보면 된다.
-      carouselRef.current.style.transform = `translateX(${findCard}px)`;
-      setActiveItem(index);
+      if (e.nativeEvent.pointerType === "mouse") {
+        const findCard = - (cardWidth * (index));
+        console.log('findCard:',findCard)  
+        carouselRef.current.style.transform = `translateX(${findCard}px)`;
+        setActiveItem(index);
+      } else { // === "touch"
+        const scroll = (node, left) => {
+          return node.scrollTo({left, behavior:'smooth'});
+        }
+        const scrollLeft = Math.floor(carouselRef.current.scrollWidth * (index / TOTAL_PROJECT_CAROUSEL_COUNT));
+        scroll(carouselRef.current, scrollLeft);
+      }
     }
   }
   
@@ -46,13 +59,12 @@ const Projects = () => {
   //! 카드의 시작점마다 멈추는 이유가 뭐야?
   // 이것만 고치면 되는데!!!
   const handleGestureMove = (e) => {
-    e.preventDefault();
     if (isCursorDragging) {
       const currentMousePosition = e.pageX ;
       const howMuchXMovedRightNow = currentMousePosition - previousStartMousePosition;
       const totalValueDraggedXFromStartLine = howMuchXMovedRightNow + previouslyDraggedX;
-      console.log('howMuchXMovedRightNow:',howMuchXMovedRightNow);
-      console.log('totalValueDraggedXFromStartLine:',totalValueDraggedXFromStartLine);
+      // console.log('howMuchXMovedRightNow:',howMuchXMovedRightNow);
+      // console.log('totalValueDraggedXFromStartLine:',totalValueDraggedXFromStartLine);
       if (howMuchXMovedRightNow > 0) { 
         // 왼쪽으로 넘어갈 때 양수
         // 즉 왼쪽으로 넘어가면서 스타트라인의 왼쪽으로 가는 순간 return해서
@@ -69,7 +81,6 @@ const Projects = () => {
         
         /* 50은 임의조정 */
         /* 로직에서 멈추는가? */
-        console.log('전체길이:',cardWidth * (TOTAL_PROJECT_CAROUSEL_COUNT-1) - 20);
         if (Math.abs(totalValueDraggedXFromStartLine) > cardWidth * (TOTAL_PROJECT_CAROUSEL_COUNT-1) ) {
           return;
         }
@@ -90,7 +101,6 @@ const Projects = () => {
   };
 
   const handleScroll = (e) => {
-    console.log('hey');
     if (carouselRef.current) {
       console.log('scrollLeft',carouselRef.current.scrollLeft)
       console.log('scrollWidth',carouselRef.current.scrollWidth)
