@@ -48,17 +48,17 @@ function NavDropDown() {
             </li>
           </Div2>
           <Div3>
-            <SocialIcons href="https://github.com">
+            <SocialIcons href="https://www.wontaeblog.space/">
+              <FaBlogger size="3rem"/>
+            </SocialIcons>
+            <SocialIcons href="https://github.com/beegramin9/">
               <AiFillGithub size="3rem"/>
             </SocialIcons>
-            <SocialIcons href="https://linkedin.com">
+            <SocialIcons href="https://www.linkedin.com/in/wontae-choi-917259209/">
               <AiFillLinkedin size="3rem"/>
             </SocialIcons>
-            <SocialIcons href="https://instagram.com">
+            <SocialIcons href="https://www.instagram.com/beestron9/">
               <AiFillInstagram size="3rem"/>
-            </SocialIcons>
-            <SocialIcons href="https://google.com">
-              <FaBlogger size="3rem"/>
             </SocialIcons>
           </Div3>
         </RightNav>

@@ -23,17 +23,17 @@ const Footer = () => {
           <Slogan>Innovating one project at a time</Slogan>
         </CompanyContainer>
         <SocialContainer>
-        <SocialIcons href="https://github.com" style={{color:'rgb(135, 209, 242)'}}>
+        <SocialIcons href="https://www.wontaeblog.space/" style={{color:'rgb(135, 209, 242)'}}>
+          <FaBlogger size="3rem"/>
+        </SocialIcons>
+        <SocialIcons href="https://github.com/beegramin9" style={{color:'rgb(135, 209, 242)'}}>
           <AiFillGithub size="3rem"/>
         </SocialIcons>
-        <SocialIcons href="https://linkedin.com" style={{color:'rgb(135, 209, 242)'}}>
+        <SocialIcons href="https://www.linkedin.com/in/wontae-choi-917259209/" style={{color:'rgb(135, 209, 242)'}}>
           <AiFillLinkedin size="3rem"/>
         </SocialIcons>
-        <SocialIcons href="https://instagram.com" style={{color:'rgb(135, 209, 242)'}}>
+        <SocialIcons href="https://www.instagram.com/beestron9/" style={{color:'rgb(135, 209, 242)'}}>
           <AiFillInstagram size="3rem"/>
-        </SocialIcons>
-        <SocialIcons href="https://google.com" style={{color:'rgb(135, 209, 242)'}}>
-          <FaBlogger size="3rem"/>
         </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

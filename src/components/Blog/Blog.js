@@ -37,7 +37,7 @@ function Blog() {
                 {/* Framer Motion으로 하기 */}
                 <img src="./images/blog.gif"/>
                 <Button>
-                    <a href="https://www.youtube.com/"
+                    <a href="https://www.wontaeblog.space/"
                         style={{ color: '#fff'}}>
                         Check out my blog
                     </a>
