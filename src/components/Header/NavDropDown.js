@@ -26,11 +26,11 @@ function NavDropDown() {
                 <NavLink>Blog</NavLink>
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="#projects">
                 <NavLink>Projects</NavLink>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="#tech">
                 <NavLink>Techs</NavLink>

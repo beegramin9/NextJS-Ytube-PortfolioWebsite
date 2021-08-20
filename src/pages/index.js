@@ -34,7 +34,7 @@ const Home = () => {
           {/* <Popup isOpen={isOpen} setIsOpen={setIsOpen}/> */}
         </Section>
         <Blog />
-        <Projects />
+        {/* <Projects /> */}
         <Technologies/>
         <Timeline />
         <Acomplishments />
