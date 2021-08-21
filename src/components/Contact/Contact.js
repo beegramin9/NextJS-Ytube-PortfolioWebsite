@@ -37,14 +37,14 @@ function Contact() {
             <SectionTitle main>How To Reach Me</SectionTitle>
             {/* 지도, Contact flex row, 반응형으로 하려면 결국 새로 만들어야 함*/}
             <ContactContainer>
-                <MapBox></MapBox>
+                <MapBox/>
                 <EmailFormContainer>
                     <form onSubmit={sendEmail}>
                         <EmailColumnList>
                                 <Input type='text' placeholder='Your Name' name='name'/>
                                 <Input type='email' placeholder='Your Email Address' name='email'/>
                                 <Input type='text' placeholder='Title' name='subject'/>
-                                <TextArea placeholder='Your Message' name='message' cols="30" rows="10"/>
+                                <TextArea placeholder='Your Message' name='message' cols="30" rows="8"/>
                                 <Button>Send</Button>
                         </EmailColumnList>
                     </form>

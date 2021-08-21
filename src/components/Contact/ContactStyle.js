@@ -16,14 +16,14 @@ export const EmailFormContainer = styled.div`
 
     @media ${(props) => props.theme.breakpoints.md} {
         /* 지도랑 똑같게 하려고 */
-        width: 40rem;
+        width: 36rem;
     }
 `
 
 export const EmailColumnList = styled.ul`
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2.25rem;
 
     @media ${(props) => props.theme.breakpoints.md} {
         padding: 0;
