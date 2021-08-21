@@ -5,6 +5,10 @@ export const StyledReactMapGL = styled(ReactMapGL)`
     border-radius: 15px;
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.15),
     0 8px 16px -8px rgba(0, 0, 0, 0.15), 0 -6px 16px -6px rgba(0, 0, 0, 0.015);
+
+    @media ${props => props.theme.breakpoints.sm} {
+        
+    }
 `;
 
 

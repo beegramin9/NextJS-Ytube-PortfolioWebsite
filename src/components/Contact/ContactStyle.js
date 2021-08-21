@@ -15,8 +15,6 @@ export const EmailFormContainer = styled.div`
     flex: 4;
 
     @media ${(props) => props.theme.breakpoints.md} {
-        /* 지도랑 똑같게 하려고 */
-        width: 36rem;
     }
 `
 

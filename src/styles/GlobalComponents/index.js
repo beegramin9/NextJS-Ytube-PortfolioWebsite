@@ -23,7 +23,7 @@ export const Section = styled.section`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => props.nopadding ? "0" : "52px 16px 0" } ;
-    width: 96%;
+    width: 100%;
     flex-direction: column;
   }
 `

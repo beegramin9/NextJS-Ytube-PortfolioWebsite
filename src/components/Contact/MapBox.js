@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import { Marker, Popup} from 'react-map-gl';
 import { StyledReactMapGL, MarkerIconButton, Address } from './MapBoxStyle';
@@ -7,9 +7,9 @@ function MapBox() {
     const [viewport, setViewport] = useState({
         latitude: 37.529669407507,
         longitude: 126.89800554571,
-        width: '36rem',
-        height: '36rem',
-        zoom: 12
+        zoom: 12,
+        width: "36rem",
+        height: "36rem",
     })
 
     const [selectedPin, setSelectedPin] = useState(true);
@@ -25,7 +25,7 @@ function MapBox() {
             onClick={e => {
                 e.preventDefault();
                 setSelectedPin(true);
-              }}>
+                }}>
                 <MarkerIconButton>
                     <img src='/map_pin.svg' art="Here"/>
                 </MarkerIconButton>
