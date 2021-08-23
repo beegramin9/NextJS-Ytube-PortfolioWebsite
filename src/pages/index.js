@@ -11,7 +11,8 @@ import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 
 // import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
-import React /* , {useState, useEffect}  */from 'react'
+import React /* , {useState, useEffect}  */from 'react';
+import Head from 'next/head';
 
 const Home = () => {
   // const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +28,22 @@ const Home = () => {
   //todo Hero, BgAnimation 겹치게 해야 함
   return (
     <Layout>
-        <Section /* grid */ flex row>
-          <Hero/>
-          {/* <BgAnimation/> */}
-          <Portrait/> 
-          {/* <Popup isOpen={isOpen} setIsOpen={setIsOpen}/> */}
-        </Section>
-        <Blog />
-        {/* <Projects /> */}
-        <Technologies/>
-        <Timeline />
-        <Acomplishments />
-        <Contact/>
+      <Head>
+        <title>Get to know me!</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Section /* grid */ flex row>
+        <Hero/>
+        {/* <BgAnimation/> */}
+        <Portrait/> 
+        {/* <Popup isOpen={isOpen} setIsOpen={setIsOpen}/> */}
+      </Section>
+      <Blog />
+      {/* <Projects /> */}
+      <Technologies/>
+      <Timeline />
+      <Acomplishments />
+      <Contact/>
     </Layout>
   );
 };
