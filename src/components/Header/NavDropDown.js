@@ -1,6 +1,6 @@
 import React, {useState}  from 'react'
 import Link from 'next/link';
-import { StyledBurger, RightNav, Div2, Div3, NavLink, SocialIcons } from './NavDropDownStyle';
+import { StyledBurger, RightNav, AnchorTagsWrapper, SocialIconsWrapper, NavLink, SocialIcons } from './NavDropDownStyle';
 
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { FaBlogger } from 'react-icons/fa';
@@ -20,7 +20,7 @@ function NavDropDown() {
             <div/>
         </StyledBurger>
         <RightNav open={open}>
-          <Div2>
+          <AnchorTagsWrapper>
             <li>
               <Link href="#blog">
                 <NavLink>Blog</NavLink>
@@ -46,9 +46,9 @@ function NavDropDown() {
                 <NavLink>Contact</NavLink>
               </Link>
             </li>
-          </Div2>
-          <Div3>
-            <SocialIcons href="https://www.wontaeblog.space/">
+          </AnchorTagsWrapper>
+          <SocialIconsWrapper>
+            <SocialIcons href="https://wontaeblog.space/">
               <FaBlogger size="3rem"/>
             </SocialIcons>
             <SocialIcons href="https://github.com/beegramin9/">
@@ -60,7 +60,7 @@ function NavDropDown() {
             <SocialIcons href="https://www.instagram.com/beestron9/">
               <AiFillInstagram size="3rem"/>
             </SocialIcons>
-          </Div3>
+          </SocialIconsWrapper>
         </RightNav>
       </>
     )

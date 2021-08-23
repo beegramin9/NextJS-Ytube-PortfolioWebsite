@@ -35,7 +35,6 @@ export const StyledBurger = styled.div`
 //!* RightNav
 export const RightNav = styled.div`
   /* 색을 바꿔야 함 */
-  flex: 6;
   display: flex;
   grid-area: 1 / 3 / 2 / 6;
   @media ${(props) => props.theme.breakpoints.lg} {
@@ -60,32 +59,34 @@ export const RightNav = styled.div`
 `;
 
 
-export const Div2 = styled.div`
+export const AnchorTagsWrapper = styled.div`
   flex: 7;
   display: flex;
-  margin: 0 0 0 .5rem;
-  gap: 0.5rem;
-  justify-content: space-around;
+  margin: 0 1.5rem 0 .5rem;
+  gap: 3rem;
+  justify-content: flex-end;
   @media ${(props) => props.theme.breakpoints.md} {
     flex-direction: column;
     justify-content: flex-start;
+    gap: .5rem;
   }
 `;
 
-export const Div3 = styled.div`
-  flex: 2;
+export const SocialIconsWrapper = styled.div`
+  /* 뭔가 너무 많은 느낌이라... */
+  /* flex: 2;
   position: relative;
   bottom: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-right: 1rem;
+  padding-right: 1rem; */
+  display: none;
   @media ${(props) => props.theme.breakpoints.md} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: flex-start;
     align-content: center;
-
   }
 
 `;

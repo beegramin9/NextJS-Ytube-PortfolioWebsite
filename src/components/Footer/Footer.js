@@ -5,6 +5,17 @@ import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTi
 
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { FaBlogger } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+const blinkVarinats = {
+  hidden: { 
+      opacity: 0, 
+  },
+  visible: { 
+      opacity: 1, 
+      transition: { yoyo: Infinity, duration: 1.5}
+  },
+};
+
 
 const Footer = () => {
   return (
@@ -20,21 +31,29 @@ const Footer = () => {
 
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <Slogan>This blog is
+            <motion.span
+            variants={blinkVarinats}
+            initial="hidden"
+            animate="visible">
+            🔨powered⚡</motion.span>
+            with <img src="./icons/nextjs.svg"/>
+            <br/>
+          ⓒ 2021. All right reserved</Slogan>
         </CompanyContainer>
         <SocialContainer>
-        <SocialIcons href="https://www.wontaeblog.space/" style={{color:'rgb(135, 209, 242)'}}>
-          <FaBlogger size="3rem"/>
-        </SocialIcons>
-        <SocialIcons href="https://github.com/beegramin9" style={{color:'rgb(135, 209, 242)'}}>
-          <AiFillGithub size="3rem"/>
-        </SocialIcons>
-        <SocialIcons href="https://www.linkedin.com/in/wontae-choi-917259209/" style={{color:'rgb(135, 209, 242)'}}>
-          <AiFillLinkedin size="3rem"/>
-        </SocialIcons>
-        <SocialIcons href="https://www.instagram.com/beestron9/" style={{color:'rgb(135, 209, 242)'}}>
-          <AiFillInstagram size="3rem"/>
-        </SocialIcons>
+          <SocialIcons href="https://wontaeblog.space/" style={{color:'rgb(135, 209, 242)'}}>
+            <FaBlogger size="3rem"/>
+          </SocialIcons>
+          <SocialIcons href="https://github.com/beegramin9" style={{color:'rgb(135, 209, 242)'}}>
+            <AiFillGithub size="3rem"/>
+          </SocialIcons>
+          <SocialIcons href="https://www.linkedin.com/in/wontae-choi-917259209/" style={{color:'rgb(135, 209, 242)'}}>
+            <AiFillLinkedin size="3rem"/>
+          </SocialIcons>
+          <SocialIcons href="https://www.instagram.com/beestron9/" style={{color:'rgb(135, 209, 242)'}}>
+            <AiFillInstagram size="3rem"/>
+          </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>
     </FooterWrapper>

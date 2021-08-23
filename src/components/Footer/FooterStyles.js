@@ -87,19 +87,26 @@ export const Slogan = styled.p`
 	color: ${props => props.theme.colors.lightblack};
 	min-width: 280px;
 	letter-spacing: 0.02em;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 30px;
-	padding: 1rem;
 
 	@media ${props => props.theme.breakpoints.md}{
-		font-size: 16px;
+		font-size: 13px;
 		line-height: 28px;
 	}
 
 	@media ${props => props.theme.breakpoints.sm}{
 		line-height: 22px;
-		font-size: 14px;
+		font-size: 12px;
 		min-width: 100px;
+		text-align: center;
+	}
+
+	img {
+		height: 30px;
+		position: relative;
+        transform: translateY(30%);
+
 	}
 `
 
@@ -109,7 +116,6 @@ export const SocialContainer = styled.div`
 
 	@media ${props => props.theme.breakpoints.md}{
 		justify-content: center;
-		padding-right: 16px;
 	}
 `
 
