@@ -1,6 +1,6 @@
 ## Personal Portfolio
 
-![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)
+![Landingpage](https://user-images.githubusercontent.com/58083434/130402392-0859a094-4655-45d0-b184-a07b89a7ee23.gif)
 "# ReactJS-PortfolioWebsite"
 
 # Technology Stack
